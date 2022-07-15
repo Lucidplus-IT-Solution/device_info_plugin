@@ -35,9 +35,15 @@ Retrive all device info.
 |   ✔️    | :x:  |  :x:   | :x:  | :x:   | :x:  |
 
 ##  Features
-[:heavy_exclamation_mark:] - Not fully Stable(Some information cannot be retrived. Use with caution)
-[:x:] - Experimental ( Cannot guarantee)
+
+
+
+
 [:white_check_mark:] -  Stable  
+
+[:heavy_exclamation_mark:] - Not fully Stable(Some information cannot be retrived. Use with caution)
+
+[:x:] - Experimental ( Cannot guarantee)
 
 Supported Retriving Information about
 - [:heavy_exclamation_mark:] Android
