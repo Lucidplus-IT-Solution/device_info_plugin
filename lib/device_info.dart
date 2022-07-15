@@ -14,6 +14,7 @@ import 'package:device_info/models/thermal.dart';
 import 'device_info_platform_interface.dart';
 
 class DeviceInfo {
+  /// [DeviceInfo] is a singleton class that provides access to the device info.
   Future<AndroidDeviceInfo?> getAndroidDeviceInfo() {
     return DeviceInfoPlatform.instance.getAndroidDeviceInfo();
   }
