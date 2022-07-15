@@ -64,10 +64,41 @@ Supported Retriving Information about
 
 - [ ] Thermal Info
 
-  
-  
-  
+## Screenshots of example app
 
+<table>
+  <tr>
+    <td>Android Info</td>
+     <td>Battery</td>
+     <td>Camera</td>
+      <td>CPU</td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/android.png" height="100%" width="100%"></td>
+     <td><img src="screenshots/battery.png" height="100%" width="100%"></td> 
+      <td><img src="screenshots/camera.png" height="100%" width="100%"></td>
+      <td><img src="screenshots/cpu.png" height="100%" width="100%"></td>
+  </tr>
+ </table>
+
+<table>
+  <tr>
+    <td>Display</td>
+     <td>DRM</td>
+     <td>Memory</td>
+      <td>Network</td>
+     <td>System</td>
+     
+  </tr>
+  <tr>
+   <td><img src="screenshots/display.png" height="100%" width="100%"></td> 
+      <td><img src="screenshots/drm.png" height="100%" width="100%"></td>
+      <td><img src="screenshots/memory.png" height="100%" width="100%"></td>
+     <td><img src="screenshots/network.png" height="100%" width="100%"></td> 
+      <td><img src="screenshots/system.png" height="100%" width="100%"></td>
+  </tr>
+ </table>
+ 
 ##  Installation
 
   
