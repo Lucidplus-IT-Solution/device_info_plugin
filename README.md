@@ -25,8 +25,7 @@ and the Flutter guide for
 -->
 
   
-
-Retrive all device info.
+`` System ,CPU ,ANDROID ,DRM ,MEMEORY ,CAMERA ,BATTERY ,DISPLAY ,THERMAL ,NETWORK ,SIMINFO ,SYSTEMFILES  ``
 
   ## Platform Support
 
@@ -40,12 +39,16 @@ Retrive all device info.
 
 
 [:white_check_mark:] -  Stable  
-
+&nbsp;
 [:heavy_exclamation_mark:] - Not fully Stable(Some information cannot be retrived. Use with caution)
-
+&nbsp;
 [:x:] - Experimental ( Cannot guarantee)
+&nbsp;&nbsp;&nbsp;
+&nbsp;
 
-Supported Retriving Information about
+
+#### Supported Retriving Information about
+
 - [:heavy_exclamation_mark:] Android
 
 - [:white_check_mark:] System
@@ -64,11 +67,11 @@ Supported Retriving Information about
 
 - [:heavy_exclamation_mark:] Network
 
-- [ ] SIM
+- [:x: ] SIM
 
-- [ ] System Files
+- [:x:] System Files
 
-- [ ] Thermal Info
+- [:x:] Thermal Info
 
 ## Screenshots of example app
 
@@ -189,20 +192,26 @@ import  'package:device_info_x/device_info_x.dart';
 
 - Get a DeviceInfoX Instance
 ```dart
-DeviceInfo deviceInfox = DeviceInfoX();
+
+DeviceInfoX deviceInfox = DeviceInfoX();
+
 ```
 Usage
 
 ```dart
+
 final result =  await deviceInfo.getAndroid();
 if (result !=  null) {
 	final map = result.toMap(); ///Convert to Map is Possible
 }
+
 ```
 ## Methods Available 
 ```dart
+
 getAndroidDeviceInfo() - Get all info
  ( System,CPU,ANDROID,DRM,MEMEORY,CAMERA,BATTERY,DISPLAY,THERMAL,NETWORK,SIMINFO,SYSTEMFILES)
+ 
 ```
 
 
