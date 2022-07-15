@@ -57,7 +57,6 @@ class Android {
     this.androidLanguage,
     this.configuredTimeZone,
   });
- 
 
   Android copyWith({
     String? androidversion,
@@ -91,7 +90,8 @@ class Android {
     return Android(
       androidversion: androidversion ?? this.androidversion,
       apiLevel: apiLevel ?? this.apiLevel,
-      androidSecurityPatchLevel: androidSecurityPatchLevel ?? this.androidSecurityPatchLevel,
+      androidSecurityPatchLevel:
+          androidSecurityPatchLevel ?? this.androidSecurityPatchLevel,
       isDeviceRooted: isDeviceRooted ?? this.isDeviceRooted,
       androidId: androidId ?? this.androidId,
       baseband: baseband ?? this.baseband,
@@ -108,7 +108,8 @@ class Android {
       kernelVersion: kernelVersion ?? this.kernelVersion,
       tags: tags ?? this.tags,
       buildType: buildType ?? this.buildType,
-      googlePlayServiceVersion: googlePlayServiceVersion ?? this.googlePlayServiceVersion,
+      googlePlayServiceVersion:
+          googlePlayServiceVersion ?? this.googlePlayServiceVersion,
       opensslVersion: opensslVersion ?? this.opensslVersion,
       zlibVersion: zlibVersion ?? this.zlibVersion,
       icuCldrVersion: icuCldrVersion ?? this.icuCldrVersion,
@@ -185,7 +186,8 @@ class Android {
 
   String toJson() => json.encode(toMap());
 
-  factory Android.fromJson(String source) => Android.fromMap(json.decode(source));
+  factory Android.fromJson(String source) =>
+      Android.fromMap(json.decode(source));
 
   @override
   String toString() {
@@ -195,65 +197,65 @@ class Android {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
+
     return other is Android &&
-      other.androidversion == androidversion &&
-      other.apiLevel == apiLevel &&
-      other.androidSecurityPatchLevel == androidSecurityPatchLevel &&
-      other.isDeviceRooted == isDeviceRooted &&
-      other.androidId == androidId &&
-      other.baseband == baseband &&
-      other.bootloader == bootloader &&
-      other.buildId == buildId &&
-      other.codeName == codeName &&
-      other.fingerprint == fingerprint &&
-      other.id == id &&
-      other.incremental == incremental &&
-      other.javaRuntimeVersion == javaRuntimeVersion &&
-      other.javaVmVersion == javaVmVersion &&
-      other.javaHeapSize == javaHeapSize &&
-      other.kernelArchitecture == kernelArchitecture &&
-      other.kernelVersion == kernelVersion &&
-      other.tags == tags &&
-      other.buildType == buildType &&
-      other.googlePlayServiceVersion == googlePlayServiceVersion &&
-      other.opensslVersion == opensslVersion &&
-      other.zlibVersion == zlibVersion &&
-      other.icuCldrVersion == icuCldrVersion &&
-      other.icuLibraryVersion == icuLibraryVersion &&
-      other.icuUnicodeVersion == icuUnicodeVersion &&
-      other.androidLanguage == androidLanguage &&
-      other.configuredTimeZone == configuredTimeZone;
+        other.androidversion == androidversion &&
+        other.apiLevel == apiLevel &&
+        other.androidSecurityPatchLevel == androidSecurityPatchLevel &&
+        other.isDeviceRooted == isDeviceRooted &&
+        other.androidId == androidId &&
+        other.baseband == baseband &&
+        other.bootloader == bootloader &&
+        other.buildId == buildId &&
+        other.codeName == codeName &&
+        other.fingerprint == fingerprint &&
+        other.id == id &&
+        other.incremental == incremental &&
+        other.javaRuntimeVersion == javaRuntimeVersion &&
+        other.javaVmVersion == javaVmVersion &&
+        other.javaHeapSize == javaHeapSize &&
+        other.kernelArchitecture == kernelArchitecture &&
+        other.kernelVersion == kernelVersion &&
+        other.tags == tags &&
+        other.buildType == buildType &&
+        other.googlePlayServiceVersion == googlePlayServiceVersion &&
+        other.opensslVersion == opensslVersion &&
+        other.zlibVersion == zlibVersion &&
+        other.icuCldrVersion == icuCldrVersion &&
+        other.icuLibraryVersion == icuLibraryVersion &&
+        other.icuUnicodeVersion == icuUnicodeVersion &&
+        other.androidLanguage == androidLanguage &&
+        other.configuredTimeZone == configuredTimeZone;
   }
 
   @override
   int get hashCode {
     return androidversion.hashCode ^
-      apiLevel.hashCode ^
-      androidSecurityPatchLevel.hashCode ^
-      isDeviceRooted.hashCode ^
-      androidId.hashCode ^
-      baseband.hashCode ^
-      bootloader.hashCode ^
-      buildId.hashCode ^
-      codeName.hashCode ^
-      fingerprint.hashCode ^
-      id.hashCode ^
-      incremental.hashCode ^
-      javaRuntimeVersion.hashCode ^
-      javaVmVersion.hashCode ^
-      javaHeapSize.hashCode ^
-      kernelArchitecture.hashCode ^
-      kernelVersion.hashCode ^
-      tags.hashCode ^
-      buildType.hashCode ^
-      googlePlayServiceVersion.hashCode ^
-      opensslVersion.hashCode ^
-      zlibVersion.hashCode ^
-      icuCldrVersion.hashCode ^
-      icuLibraryVersion.hashCode ^
-      icuUnicodeVersion.hashCode ^
-      androidLanguage.hashCode ^
-      configuredTimeZone.hashCode;
+        apiLevel.hashCode ^
+        androidSecurityPatchLevel.hashCode ^
+        isDeviceRooted.hashCode ^
+        androidId.hashCode ^
+        baseband.hashCode ^
+        bootloader.hashCode ^
+        buildId.hashCode ^
+        codeName.hashCode ^
+        fingerprint.hashCode ^
+        id.hashCode ^
+        incremental.hashCode ^
+        javaRuntimeVersion.hashCode ^
+        javaVmVersion.hashCode ^
+        javaHeapSize.hashCode ^
+        kernelArchitecture.hashCode ^
+        kernelVersion.hashCode ^
+        tags.hashCode ^
+        buildType.hashCode ^
+        googlePlayServiceVersion.hashCode ^
+        opensslVersion.hashCode ^
+        zlibVersion.hashCode ^
+        icuCldrVersion.hashCode ^
+        icuLibraryVersion.hashCode ^
+        icuUnicodeVersion.hashCode ^
+        androidLanguage.hashCode ^
+        configuredTimeZone.hashCode;
   }
 }

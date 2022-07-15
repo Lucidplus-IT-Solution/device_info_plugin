@@ -10,7 +10,7 @@ class Display {
   String brightnessLevel;
   String screenTimeout;
   String orientation;
-  
+
   Display({
     required this.resolution,
     required this.density,
@@ -21,7 +21,6 @@ class Display {
     required this.screenTimeout,
     required this.orientation,
   });
-
 
   Display copyWith({
     String? resolution,
@@ -73,7 +72,8 @@ class Display {
 
   String toJson() => json.encode(toMap());
 
-  factory Display.fromJson(String source) => Display.fromMap(json.decode(source));
+  factory Display.fromJson(String source) =>
+      Display.fromMap(json.decode(source));
 
   @override
   String toString() {
@@ -83,27 +83,27 @@ class Display {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
+
     return other is Display &&
-      other.resolution == resolution &&
-      other.density == density &&
-      other.screenSize == screenSize &&
-      other.refreshRate == refreshRate &&
-      other.hdrCapabilities == hdrCapabilities &&
-      other.brightnessLevel == brightnessLevel &&
-      other.screenTimeout == screenTimeout &&
-      other.orientation == orientation;
+        other.resolution == resolution &&
+        other.density == density &&
+        other.screenSize == screenSize &&
+        other.refreshRate == refreshRate &&
+        other.hdrCapabilities == hdrCapabilities &&
+        other.brightnessLevel == brightnessLevel &&
+        other.screenTimeout == screenTimeout &&
+        other.orientation == orientation;
   }
 
   @override
   int get hashCode {
     return resolution.hashCode ^
-      density.hashCode ^
-      screenSize.hashCode ^
-      refreshRate.hashCode ^
-      hdrCapabilities.hashCode ^
-      brightnessLevel.hashCode ^
-      screenTimeout.hashCode ^
-      orientation.hashCode;
+        density.hashCode ^
+        screenSize.hashCode ^
+        refreshRate.hashCode ^
+        hdrCapabilities.hashCode ^
+        brightnessLevel.hashCode ^
+        screenTimeout.hashCode ^
+        orientation.hashCode;
   }
 }

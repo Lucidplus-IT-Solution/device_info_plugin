@@ -24,13 +24,15 @@ class CameraInfos {
 
   factory CameraInfos.fromMap(Map<String, dynamic> map) {
     return CameraInfos(
-      cameras: List<Cameras>.from(map['cameras']?.map((x) => Cameras.fromMap(x))),
+      cameras:
+          List<Cameras>.from(map['cameras']?.map((x) => Cameras.fromMap(x))),
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory CameraInfos.fromJson(String source) => CameraInfos.fromMap(json.decode(source));
+  factory CameraInfos.fromJson(String source) =>
+      CameraInfos.fromMap(json.decode(source));
 
   @override
   String toString() => 'CameraInfos(cameras: $cameras)';
@@ -38,9 +40,8 @@ class CameraInfos {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
-    return other is CameraInfos &&
-      listEquals(other.cameras, cameras);
+
+    return other is CameraInfos && listEquals(other.cameras, cameras);
   }
 
   @override
@@ -99,12 +100,16 @@ class Cameras {
       orientation: orientation ?? this.orientation,
       focalLength: focalLength ?? this.focalLength,
       focusModes: focusModes ?? this.focusModes,
-      videoSnapshotSupported: videoSnapshotSupported ?? this.videoSnapshotSupported,
-      videoStabilizationSupported: videoStabilizationSupported ?? this.videoStabilizationSupported,
+      videoSnapshotSupported:
+          videoSnapshotSupported ?? this.videoSnapshotSupported,
+      videoStabilizationSupported:
+          videoStabilizationSupported ?? this.videoStabilizationSupported,
       zoomSupported: zoomSupported ?? this.zoomSupported,
       smoothZoomSupported: smoothZoomSupported ?? this.smoothZoomSupported,
-      autoExposureLockingSupported: autoExposureLockingSupported ?? this.autoExposureLockingSupported,
-      autoWhiteBalanceLockingSupported: autoWhiteBalanceLockingSupported ?? this.autoWhiteBalanceLockingSupported,
+      autoExposureLockingSupported:
+          autoExposureLockingSupported ?? this.autoExposureLockingSupported,
+      autoWhiteBalanceLockingSupported: autoWhiteBalanceLockingSupported ??
+          this.autoWhiteBalanceLockingSupported,
       flashSupported: flashSupported ?? this.flashSupported,
     );
   }
@@ -139,15 +144,18 @@ class Cameras {
       videoStabilizationSupported: map['videoStabilizationSupported'] ?? false,
       zoomSupported: map['zoomSupported'] ?? false,
       smoothZoomSupported: map['smoothZoomSupported'] ?? false,
-      autoExposureLockingSupported: map['autoExposureLockingSupported'] ?? false,
-      autoWhiteBalanceLockingSupported: map['autoWhiteBalanceLockingSupported'] ?? false,
+      autoExposureLockingSupported:
+          map['autoExposureLockingSupported'] ?? false,
+      autoWhiteBalanceLockingSupported:
+          map['autoWhiteBalanceLockingSupported'] ?? false,
       flashSupported: map['flashSupported'] ?? false,
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Cameras.fromJson(String source) => Cameras.fromMap(json.decode(source));
+  factory Cameras.fromJson(String source) =>
+      Cameras.fromMap(json.decode(source));
 
   @override
   String toString() {
@@ -157,37 +165,38 @@ class Cameras {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
+
     return other is Cameras &&
-      other.name == name &&
-      other.resolution == resolution &&
-      other.videoResolution == videoResolution &&
-      other.orientation == orientation &&
-      other.focalLength == focalLength &&
-      listEquals(other.focusModes, focusModes) &&
-      other.videoSnapshotSupported == videoSnapshotSupported &&
-      other.videoStabilizationSupported == videoStabilizationSupported &&
-      other.zoomSupported == zoomSupported &&
-      other.smoothZoomSupported == smoothZoomSupported &&
-      other.autoExposureLockingSupported == autoExposureLockingSupported &&
-      other.autoWhiteBalanceLockingSupported == autoWhiteBalanceLockingSupported &&
-      other.flashSupported == flashSupported;
+        other.name == name &&
+        other.resolution == resolution &&
+        other.videoResolution == videoResolution &&
+        other.orientation == orientation &&
+        other.focalLength == focalLength &&
+        listEquals(other.focusModes, focusModes) &&
+        other.videoSnapshotSupported == videoSnapshotSupported &&
+        other.videoStabilizationSupported == videoStabilizationSupported &&
+        other.zoomSupported == zoomSupported &&
+        other.smoothZoomSupported == smoothZoomSupported &&
+        other.autoExposureLockingSupported == autoExposureLockingSupported &&
+        other.autoWhiteBalanceLockingSupported ==
+            autoWhiteBalanceLockingSupported &&
+        other.flashSupported == flashSupported;
   }
 
   @override
   int get hashCode {
     return name.hashCode ^
-      resolution.hashCode ^
-      videoResolution.hashCode ^
-      orientation.hashCode ^
-      focalLength.hashCode ^
-      focusModes.hashCode ^
-      videoSnapshotSupported.hashCode ^
-      videoStabilizationSupported.hashCode ^
-      zoomSupported.hashCode ^
-      smoothZoomSupported.hashCode ^
-      autoExposureLockingSupported.hashCode ^
-      autoWhiteBalanceLockingSupported.hashCode ^
-      flashSupported.hashCode;
+        resolution.hashCode ^
+        videoResolution.hashCode ^
+        orientation.hashCode ^
+        focalLength.hashCode ^
+        focusModes.hashCode ^
+        videoSnapshotSupported.hashCode ^
+        videoStabilizationSupported.hashCode ^
+        zoomSupported.hashCode ^
+        smoothZoomSupported.hashCode ^
+        autoExposureLockingSupported.hashCode ^
+        autoWhiteBalanceLockingSupported.hashCode ^
+        flashSupported.hashCode;
   }
 }

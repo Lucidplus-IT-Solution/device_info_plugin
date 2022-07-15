@@ -1,5 +1,6 @@
-import 'package:device_info/device_info.dart';
+
 import 'package:device_info_example/app/global/utils/extensions_string.dart';
+import 'package:device_info_x/device_info_x.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 

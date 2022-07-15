@@ -52,7 +52,6 @@ class SystemInfo {
     required this.selinux,
   });
 
-
   SystemInfo copyWith({
     String? manufacture,
     String? model,
@@ -99,7 +98,8 @@ class SystemInfo {
       tags: tags ?? this.tags,
       incremental: incremental ?? this.incremental,
       fingerprint: fingerprint ?? this.fingerprint,
-      fingerprintManufacture: fingerprintManufacture ?? this.fingerprintManufacture,
+      fingerprintManufacture:
+          fingerprintManufacture ?? this.fingerprintManufacture,
       fingerprintModel: fingerprintModel ?? this.fingerprintModel,
       defaultOrientation: defaultOrientation ?? this.defaultOrientation,
       bootloader: bootloader ?? this.bootloader,
@@ -167,7 +167,8 @@ class SystemInfo {
 
   String toJson() => json.encode(toMap());
 
-  factory SystemInfo.fromJson(String source) => SystemInfo.fromMap(json.decode(source));
+  factory SystemInfo.fromJson(String source) =>
+      SystemInfo.fromMap(json.decode(source));
 
   @override
   String toString() {
@@ -177,59 +178,59 @@ class SystemInfo {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
+
     return other is SystemInfo &&
-      other.manufacture == manufacture &&
-      other.model == model &&
-      other.brand == brand &&
-      other.android == android &&
-      other.apiLevel == apiLevel &&
-      other.codeName == codeName &&
-      other.density == density &&
-      other.refreshRate == refreshRate &&
-      other.product == product &&
-      other.board == board &&
-      other.build == build &&
-      other.javaVmVersion == javaVmVersion &&
-      other.security == security &&
-      other.baseband == baseband &&
-      other.serial == serial &&
-      other.buildType == buildType &&
-      other.tags == tags &&
-      other.incremental == incremental &&
-      other.fingerprint == fingerprint &&
-      other.fingerprintManufacture == fingerprintManufacture &&
-      other.fingerprintModel == fingerprintModel &&
-      other.defaultOrientation == defaultOrientation &&
-      other.bootloader == bootloader &&
-      other.selinux == selinux;
+        other.manufacture == manufacture &&
+        other.model == model &&
+        other.brand == brand &&
+        other.android == android &&
+        other.apiLevel == apiLevel &&
+        other.codeName == codeName &&
+        other.density == density &&
+        other.refreshRate == refreshRate &&
+        other.product == product &&
+        other.board == board &&
+        other.build == build &&
+        other.javaVmVersion == javaVmVersion &&
+        other.security == security &&
+        other.baseband == baseband &&
+        other.serial == serial &&
+        other.buildType == buildType &&
+        other.tags == tags &&
+        other.incremental == incremental &&
+        other.fingerprint == fingerprint &&
+        other.fingerprintManufacture == fingerprintManufacture &&
+        other.fingerprintModel == fingerprintModel &&
+        other.defaultOrientation == defaultOrientation &&
+        other.bootloader == bootloader &&
+        other.selinux == selinux;
   }
 
   @override
   int get hashCode {
     return manufacture.hashCode ^
-      model.hashCode ^
-      brand.hashCode ^
-      android.hashCode ^
-      apiLevel.hashCode ^
-      codeName.hashCode ^
-      density.hashCode ^
-      refreshRate.hashCode ^
-      product.hashCode ^
-      board.hashCode ^
-      build.hashCode ^
-      javaVmVersion.hashCode ^
-      security.hashCode ^
-      baseband.hashCode ^
-      serial.hashCode ^
-      buildType.hashCode ^
-      tags.hashCode ^
-      incremental.hashCode ^
-      fingerprint.hashCode ^
-      fingerprintManufacture.hashCode ^
-      fingerprintModel.hashCode ^
-      defaultOrientation.hashCode ^
-      bootloader.hashCode ^
-      selinux.hashCode;
+        model.hashCode ^
+        brand.hashCode ^
+        android.hashCode ^
+        apiLevel.hashCode ^
+        codeName.hashCode ^
+        density.hashCode ^
+        refreshRate.hashCode ^
+        product.hashCode ^
+        board.hashCode ^
+        build.hashCode ^
+        javaVmVersion.hashCode ^
+        security.hashCode ^
+        baseband.hashCode ^
+        serial.hashCode ^
+        buildType.hashCode ^
+        tags.hashCode ^
+        incremental.hashCode ^
+        fingerprint.hashCode ^
+        fingerprintManufacture.hashCode ^
+        fingerprintModel.hashCode ^
+        defaultOrientation.hashCode ^
+        bootloader.hashCode ^
+        selinux.hashCode;
   }
 }

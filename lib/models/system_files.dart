@@ -40,19 +40,21 @@ class SystemFiles {
 
   String toJson() => json.encode(toMap());
 
-  factory SystemFiles.fromJson(String source) => SystemFiles.fromMap(json.decode(source));
+  factory SystemFiles.fromJson(String source) =>
+      SystemFiles.fromMap(json.decode(source));
 
   @override
-  String toString() => 'SystemFiles(cpuInfo: $cpuInfo, hosts: $hosts, memoryInfo: $memoryInfo)';
+  String toString() =>
+      'SystemFiles(cpuInfo: $cpuInfo, hosts: $hosts, memoryInfo: $memoryInfo)';
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
+
     return other is SystemFiles &&
-      other.cpuInfo == cpuInfo &&
-      other.hosts == hosts &&
-      other.memoryInfo == memoryInfo;
+        other.cpuInfo == cpuInfo &&
+        other.hosts == hosts &&
+        other.memoryInfo == memoryInfo;
   }
 
   @override

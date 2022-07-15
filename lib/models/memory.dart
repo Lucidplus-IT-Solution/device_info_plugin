@@ -33,8 +33,12 @@ class Memory {
   factory Memory.fromMap(Map<String, dynamic> map) {
     return Memory(
       ram: map['ram'] != null ? MemoryTypeInfo.fromMap(map['ram']) : null,
-      internal: map['internal'] != null ? MemoryTypeInfo.fromMap(map['internal']) : null,
-      external: map['external'] != null ? MemoryTypeInfo.fromMap(map['external']) : null,
+      internal: map['internal'] != null
+          ? MemoryTypeInfo.fromMap(map['internal'])
+          : null,
+      external: map['external'] != null
+          ? MemoryTypeInfo.fromMap(map['external'])
+          : null,
     );
   }
 
@@ -43,16 +47,17 @@ class Memory {
   factory Memory.fromJson(String source) => Memory.fromMap(json.decode(source));
 
   @override
-  String toString() => 'Memorya(ram: $ram, internal: $internal, external: $external)';
+  String toString() =>
+      'Memorya(ram: $ram, internal: $internal, external: $external)';
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
+
     return other is Memory &&
-      other.ram == ram &&
-      other.internal == internal &&
-      other.external == external;
+        other.ram == ram &&
+        other.internal == internal &&
+        other.external == external;
   }
 
   @override

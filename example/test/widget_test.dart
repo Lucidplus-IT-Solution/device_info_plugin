@@ -11,6 +11,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:device_info_example/main.dart';
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
   testWidgets('Verify Platform version', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const MyApp());
@@ -19,7 +20,7 @@ void main() {
     expect(
       find.byWidgetPredicate(
         (Widget widget) => widget is Text &&
-                           widget.data!.startsWith('data:'),
+                           widget.data!.startsWith('Welcome to Flutter!'),
       ),
       findsOneWidget,
     );

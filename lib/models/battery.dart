@@ -19,7 +19,6 @@ class Battery {
     this.voltage,
     this.powerProfile,
   });
- 
 
   Battery copyWith({
     int? level,
@@ -71,7 +70,8 @@ class Battery {
 
   String toJson() => json.encode(toMap());
 
-  factory Battery.fromJson(String source) => Battery.fromMap(json.decode(source));
+  factory Battery.fromJson(String source) =>
+      Battery.fromMap(json.decode(source));
 
   @override
   String toString() {
@@ -81,27 +81,27 @@ class Battery {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
+
     return other is Battery &&
-      other.level == level &&
-      other.health == health &&
-      other.status == status &&
-      other.powerSource == powerSource &&
-      other.technology == technology &&
-      other.temperature == temperature &&
-      other.voltage == voltage &&
-      other.powerProfile == powerProfile;
+        other.level == level &&
+        other.health == health &&
+        other.status == status &&
+        other.powerSource == powerSource &&
+        other.technology == technology &&
+        other.temperature == temperature &&
+        other.voltage == voltage &&
+        other.powerProfile == powerProfile;
   }
 
   @override
   int get hashCode {
     return level.hashCode ^
-      health.hashCode ^
-      status.hashCode ^
-      powerSource.hashCode ^
-      technology.hashCode ^
-      temperature.hashCode ^
-      voltage.hashCode ^
-      powerProfile.hashCode;
+        health.hashCode ^
+        status.hashCode ^
+        powerSource.hashCode ^
+        technology.hashCode ^
+        temperature.hashCode ^
+        voltage.hashCode ^
+        powerProfile.hashCode;
   }
 }

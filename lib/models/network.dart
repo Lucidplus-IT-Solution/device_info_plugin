@@ -27,14 +27,16 @@ class Network {
 
   factory Network.fromMap(Map<String, dynamic> map) {
     return Network(
-      telephony: map['telephony'] != null ? Telephony.fromMap(map['telephony']) : null,
+      telephony:
+          map['telephony'] != null ? Telephony.fromMap(map['telephony']) : null,
       wifi: map['wifi'] != null ? Wifi.fromMap(map['wifi']) : null,
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Network.fromJson(String source) => Network.fromMap(json.decode(source));
+  factory Network.fromJson(String source) =>
+      Network.fromMap(json.decode(source));
 
   @override
   String toString() => 'Network(telephony: $telephony, wifi: $wifi)';
@@ -42,16 +44,15 @@ class Network {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
+
     return other is Network &&
-      other.telephony == telephony &&
-      other.wifi == wifi;
+        other.telephony == telephony &&
+        other.wifi == wifi;
   }
 
   @override
   int get hashCode => telephony.hashCode ^ wifi.hashCode;
 }
-
 
 class Telephony {
   String? phoneType;
@@ -90,7 +91,8 @@ class Telephony {
       phoneType: phoneType ?? this.phoneType,
       networkOperatorName: networkOperatorName ?? this.networkOperatorName,
       networkOperatorCode: networkOperatorCode ?? this.networkOperatorCode,
-      networkOperatorCountry: networkOperatorCountry ?? this.networkOperatorCountry,
+      networkOperatorCountry:
+          networkOperatorCountry ?? this.networkOperatorCountry,
       simProviderName: simProviderName ?? this.simProviderName,
       simProviderCountry: simProviderCountry ?? this.simProviderCountry,
       simState: simState ?? this.simState,
@@ -129,7 +131,8 @@ class Telephony {
 
   String toJson() => json.encode(toMap());
 
-  factory Telephony.fromJson(String source) => Telephony.fromMap(json.decode(source));
+  factory Telephony.fromJson(String source) =>
+      Telephony.fromMap(json.decode(source));
 
   @override
   String toString() {
@@ -139,30 +142,30 @@ class Telephony {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
+
     return other is Telephony &&
-      other.phoneType == phoneType &&
-      other.networkOperatorName == networkOperatorName &&
-      other.networkOperatorCode == networkOperatorCode &&
-      other.networkOperatorCountry == networkOperatorCountry &&
-      other.simProviderName == simProviderName &&
-      other.simProviderCountry == simProviderCountry &&
-      other.simState == simState &&
-      other.networkType == networkType &&
-      other.isDeviceRoaming == isDeviceRoaming;
+        other.phoneType == phoneType &&
+        other.networkOperatorName == networkOperatorName &&
+        other.networkOperatorCode == networkOperatorCode &&
+        other.networkOperatorCountry == networkOperatorCountry &&
+        other.simProviderName == simProviderName &&
+        other.simProviderCountry == simProviderCountry &&
+        other.simState == simState &&
+        other.networkType == networkType &&
+        other.isDeviceRoaming == isDeviceRoaming;
   }
 
   @override
   int get hashCode {
     return phoneType.hashCode ^
-      networkOperatorName.hashCode ^
-      networkOperatorCode.hashCode ^
-      networkOperatorCountry.hashCode ^
-      simProviderName.hashCode ^
-      simProviderCountry.hashCode ^
-      simState.hashCode ^
-      networkType.hashCode ^
-      isDeviceRoaming.hashCode;
+        networkOperatorName.hashCode ^
+        networkOperatorCode.hashCode ^
+        networkOperatorCountry.hashCode ^
+        simProviderName.hashCode ^
+        simProviderCountry.hashCode ^
+        simState.hashCode ^
+        networkType.hashCode ^
+        isDeviceRoaming.hashCode;
   }
 }
 

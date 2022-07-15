@@ -24,13 +24,15 @@ class Thermal {
 
   factory Thermal.fromMap(Map<String, dynamic> map) {
     return Thermal(
-      cpuThermals: List<ThermalType>.from(map['cpuThermals']?.map((x) => ThermalType.fromMap(x))),
+      cpuThermals: List<ThermalType>.from(
+          map['cpuThermals']?.map((x) => ThermalType.fromMap(x))),
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Thermal.fromJson(String source) => Thermal.fromMap(json.decode(source));
+  factory Thermal.fromJson(String source) =>
+      Thermal.fromMap(json.decode(source));
 
   @override
   String toString() => 'Thermal(cpuThermals: $cpuThermals)';
@@ -38,9 +40,8 @@ class Thermal {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
-    return other is Thermal &&
-      listEquals(other.cpuThermals, cpuThermals);
+
+    return other is Thermal && listEquals(other.cpuThermals, cpuThermals);
   }
 
   @override

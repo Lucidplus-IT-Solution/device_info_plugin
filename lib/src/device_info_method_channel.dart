@@ -1,19 +1,19 @@
-
-import 'package:device_info/models/android.dart';
-import 'package:device_info/models/android_device_info.dart';
-import 'package:device_info/models/battery.dart';
-import 'package:device_info/models/camera.dart';
-import 'package:device_info/models/cpu_info.dart';
-import 'package:device_info/models/display.dart';
-import 'package:device_info/models/drm_info.dart';
-import 'package:device_info/models/memory.dart';
-import 'package:device_info/models/network.dart';
-import 'package:device_info/models/sim_info.dart';
-import 'package:device_info/models/system_files.dart';
-import 'package:device_info/models/system_info.dart';
-import 'package:device_info/models/thermal.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+
+import 'package:device_info_x/models/android.dart';
+import 'package:device_info_x/models/android_device_info.dart';
+import 'package:device_info_x/models/battery.dart';
+import 'package:device_info_x/models/camera.dart';
+import 'package:device_info_x/models/cpu_info.dart';
+import 'package:device_info_x/models/display.dart';
+import 'package:device_info_x/models/drm_info.dart';
+import 'package:device_info_x/models/memory.dart';
+import 'package:device_info_x/models/network.dart';
+import 'package:device_info_x/models/sim_info.dart';
+import 'package:device_info_x/models/system_files.dart';
+import 'package:device_info_x/models/system_info.dart';
+import 'package:device_info_x/models/thermal.dart';
 
 import 'device_info_platform_interface.dart';
 

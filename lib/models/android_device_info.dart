@@ -1,17 +1,18 @@
 import 'dart:convert';
 
-import 'package:device_info/models/android.dart';
-import 'package:device_info/models/battery.dart';
-import 'package:device_info/models/camera.dart';
-import 'package:device_info/models/cpu_info.dart';
-import 'package:device_info/models/display.dart';
-import 'package:device_info/models/drm_info.dart';
-import 'package:device_info/models/memory.dart';
-import 'package:device_info/models/network.dart';
-import 'package:device_info/models/sim_info.dart';
-import 'package:device_info/models/system_files.dart';
-import 'package:device_info/models/system_info.dart';
-import 'package:device_info/models/thermal.dart';
+import 'android.dart';
+import 'battery.dart';
+import 'camera.dart';
+import 'cpu_info.dart';
+import 'display.dart';
+import 'drm_info.dart';
+import 'package:device_info_x/models/memory.dart';
+import 'sim_info.dart';
+import 'system_info.dart';
+import 'thermal.dart';
+
+import 'network.dart';
+import 'system_files.dart';
 
 class AndroidDeviceInfo {
   SystemInfo? system;
@@ -101,13 +102,16 @@ class AndroidDeviceInfo {
       thermal: map['thermal'] != null ? Thermal.fromMap(map['thermal']) : null,
       network: map['network'] != null ? Network.fromMap(map['network']) : null,
       simInfo: map['simInfo'] != null ? SimInfo.fromMap(map['simInfo']) : null,
-      systemFile: map['systemFile'] != null ? SystemFiles.fromMap(map['systemFile']) : null,
+      systemFile: map['systemFile'] != null
+          ? SystemFiles.fromMap(map['systemFile'])
+          : null,
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory AndroidDeviceInfo.fromJson(String source) => AndroidDeviceInfo.fromMap(json.decode(source));
+  factory AndroidDeviceInfo.fromJson(String source) =>
+      AndroidDeviceInfo.fromMap(json.decode(source));
 
   @override
   String toString() {
@@ -117,35 +121,35 @@ class AndroidDeviceInfo {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
+
     return other is AndroidDeviceInfo &&
-      other.system == system &&
-      other.cpu == cpu &&
-      other.android == android &&
-      other.drmInfo == drmInfo &&
-      other.memory == memory &&
-      other.camera == camera &&
-      other.battery == battery &&
-      other.display == display &&
-      other.thermal == thermal &&
-      other.network == network &&
-      other.simInfo == simInfo &&
-      other.systemFile == systemFile;
+        other.system == system &&
+        other.cpu == cpu &&
+        other.android == android &&
+        other.drmInfo == drmInfo &&
+        other.memory == memory &&
+        other.camera == camera &&
+        other.battery == battery &&
+        other.display == display &&
+        other.thermal == thermal &&
+        other.network == network &&
+        other.simInfo == simInfo &&
+        other.systemFile == systemFile;
   }
 
   @override
   int get hashCode {
     return system.hashCode ^
-      cpu.hashCode ^
-      android.hashCode ^
-      drmInfo.hashCode ^
-      memory.hashCode ^
-      camera.hashCode ^
-      battery.hashCode ^
-      display.hashCode ^
-      thermal.hashCode ^
-      network.hashCode ^
-      simInfo.hashCode ^
-      systemFile.hashCode;
+        cpu.hashCode ^
+        android.hashCode ^
+        drmInfo.hashCode ^
+        memory.hashCode ^
+        camera.hashCode ^
+        battery.hashCode ^
+        display.hashCode ^
+        thermal.hashCode ^
+        network.hashCode ^
+        simInfo.hashCode ^
+        systemFile.hashCode;
   }
 }
