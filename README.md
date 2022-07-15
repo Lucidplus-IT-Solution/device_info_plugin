@@ -1,88 +1,177 @@
-# device_info
-<!-- 
+#  device_info_X
+
+<!--
+
 This README describes the package. If you publish this package to pub.dev,
+
 this README's contents appear on the landing page for your package.
 
+  
+
 For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+
+[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+
+  
 
 For general information about developing packages, see the Dart guide for
+
 [creating packages](https://dart.dev/guides/libraries/create-library-packages)
+
 and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
+
+[developing packages and plugins](https://flutter.dev/developing-packages).
+
 -->
+
+  
 
 Retrive all device info.
 
-## Features
+  ## Platform Support
+
+| Android | iOS | MacOS | Web | Linux | Windows |
+| :-----: | :-: | :---: | :-: | :---: | :-----: |
+|   ✔️    | :x:  |  :x:   | :x:  | :x:   | :x:  |
+
+##  Features
+[:heavy_exclamation_mark:] - Not fully Stable(Some information cannot be retrived. Use with caution)
+[:x:] - Experimental ( Cannot guarantee)
+[:white_check_mark:] -  Stable  
+
 Supported Retriving Information about
-[ :heavy_exclamation_mark:] - Not fully Stable(Some information cannot be retrived Use with caution)
+- [:heavy_exclamation_mark:] Android
 
+- [:white_check_mark:] System
 
-- [:heavy_exclamation_mark: ] Android
-- [ ] System
-- [ ] Battery
-- [ ] Camera
-- [ ] CPU
-- [ ] Display
-- [ ] DRM
-- [ ] Memory
-- [ ] Network
+- [:heavy_exclamation_mark:] Battery
+
+- [:white_check_mark: ] Camera
+
+- [:heavy_exclamation_mark: ] CPU
+
+- [:white_check_mark: ] Display
+
+- [ :white_check_mark:] DRM
+
+- [:white_check_mark: ] Memory
+
+- [:heavy_exclamation_mark:] Network
+
 - [ ] SIM
+
 - [ ] System Files
+
 - [ ] Thermal Info
 
+  
+  
+  
 
+##  Installation
 
-## Installation
+  
 
-- Add dependencies as 
+- Add dependencies as
+
 ```yaml
-  multi_form_builder:
-    git:
-      url: https://github.com/Shreemanarjun/multi_form_builder.git
-      ref: main
-```
-## Usage
-
-- First import the library
-```dart
-import 'package:multi_form_builder/multi_form_builder.dart';
-```
-- Initialize a page controller
-```dart
- final PageController pageController = PageController();
-```
-- Example
-
-```dart
-MultiFormBuilder(
-          onPageChanged: (int currentpage) {
-            debugPrint('current page: $currentpage');
-          },
-          onLastPage: () {
-            debugPrint('last page got');
-          },
-          controller: pageController,
-          itemBuilder: (BuildContext context, int index) {
-            return MyWidget(text: 'Page $index');
-          },
-          itemCount: 3,
-          indicatorWidget: (context, totalItems) {
-            return SmoothPageIndicator(
-              controller: pageController, // PageController
-              count: totalItems, // total number of pages
-              effect: const SlideEffect(), // your preferred effect
-              onDotClicked: (int dotindex) {
-                pageController.jumpToPage(dotindex);
-              },
-            );
-          },
-        ),
+device_info:
+  git:
+  url:  https://github.com/Lucidplus-IT-Solution/device_info_plugin.git
+  ref:  main
 ```
 
-## Features that will be added 
-- [x] Added basic multi form builder with support of customization of indicator widget and page widgets will only build when on view
-- [ ] To Add Auto Form Builder that will fit to the current view automatically and create number of pages according to that.Also will add more customization like, to add widgets on the **``last ``**,**``intermidiate ``**,**``first ``** pages.
+##  Usage
+- Add required pemission to  ``AndroidManifest.xml``
+```xml
+
+<!-- Include only if you need to access camera & storage info. -->
+<uses-permission  android:name="android.permission.CAMERA"/>
+
+<uses-permission  android:name="android.permission.RECORD_AUDIO"/>
+<uses-permission
+
+android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+
+tools:ignore="ScopedStorage" />
+
+<uses-permission  android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+<uses-feature  android:name="android.hardware.camera" />
+
+<uses-feature  android:name="android.hardware.camera.autofocus" />
+
+<!--End Include only if you need to access camera. -->
+
+
+<!-- Include only if you need to access phone info. -->
+<uses-permission
+
+android:name="android.permission.WRITE_SETTINGS"
+
+tools:ignore="ProtectedPermissions" />
+
+<uses-permission  android:name="android.permission.READ_PHONE_STATE" />
+
+
+<uses-permission  android:name="android.permission.READ_SMS" />
+
+<uses-permission  android:name="android.permission.READ_PHONE_NUMBERS" />
+
+<!-- End.Include only if you need to access phone info. -->
+
+
+<!-- Include only if you need to access network info. -->
+<uses-permission  android:name="android.permission.ACCESS_WIFI_STATE" />
+
+<uses-permission  android:name="android.permission.CHANGE_WIFI_STATE" />
+
+<!-- Always include this permission -->
+
+<uses-permission  android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+  
+
+<!-- Include only if your app benefits from precise location access. -->
+
+<uses-permission  android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+<uses-permission  android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+<uses-permission  android:name="android.permission.INTERNET" />
+```
+  
+
+- import the library
+
+```dart
+
+import  'package:device_info_x/device_info_x.dart';
+
+```
+
+- Get a DeviceInfoX Instance
+```dart
+DeviceInfo deviceInfox = DeviceInfoX();
+```
+Usage
+
+```dart
+final result =  await deviceInfo.getAndroid();
+if (result !=  null) {
+	final map = result.toMap(); ///Convert to Map is Possible
+}
+```
+## Methods Available 
+```dart
+getAndroidDeviceInfo() - Get all info
+ ( System,CPU,ANDROID,DRM,MEMEORY,CAMERA,BATTERY,DISPLAY,THERMAL,NETWORK,SIMINFO,SYSTEMFILES)
+```
+
+
+##  Features that will be added
+
+-  [x] Added basic device info only supports android for now
+- [ ] Remove depreceated library
+
 - [ ] To publish on pub.dev
-
