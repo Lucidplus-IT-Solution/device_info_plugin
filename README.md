@@ -38,11 +38,11 @@ and the Flutter guide for
 
 
 
-[:white_check_mark:] -  Stable  
+- [:white_check_mark:] -  Stable  
 &nbsp;
-[:heavy_exclamation_mark:] - Not fully Stable(Some information cannot be retrived. Use with caution)
+- [:heavy_exclamation_mark:] - Not fully Stable(Some information cannot be retrived. Use with caution)
 &nbsp;
-[:x:] - Experimental ( Cannot guarantee)
+- [:x:] - Experimental ( Cannot guarantee,still not added to plugin yet)
 &nbsp;&nbsp;&nbsp;
 &nbsp;
 
@@ -117,8 +117,8 @@ and the Flutter guide for
 ```yaml
 device_info:
   git:
-  url:  https://github.com/Lucidplus-IT-Solution/device_info_plugin.git
-  ref:  main
+    url:  https://github.com/Lucidplus-IT-Solution/device_info_plugin.git
+    ref:  main
 ```
 
 ##  Usage
