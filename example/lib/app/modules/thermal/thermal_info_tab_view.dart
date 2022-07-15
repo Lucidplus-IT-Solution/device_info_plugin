@@ -16,7 +16,7 @@ class _ThermalTabViewState extends State<ThermalTabView> {
 
   Future<void> getThermalInfo() async {
     try {
-      final result = await DeviceInfo().getThermalInfo();
+      final result = await DeviceInfoX().getThermalInfo();
       if (result != null) {
         map = result.toMap();
       }

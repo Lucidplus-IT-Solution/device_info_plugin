@@ -16,7 +16,7 @@ class _SystemInfoTabViewState extends State<SystemInfoTabView> {
 
   Future<void> getSystemInfo() async {
     try {
-      final result = await DeviceInfo().getSystemInfo();
+      final result = await DeviceInfoX().getSystemInfo();
 
       if (result != null) {
         map = result.toMap();

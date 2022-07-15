@@ -1,4 +1,3 @@
-
 import 'package:device_info_example/app/global/utils/extensions_string.dart';
 import 'package:device_info_x/device_info_x.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +14,7 @@ class _BatteryInfoTabViewState extends State<BatteryInfoTabView> {
   Map map = {};
 
   Future<void> getBatteryInfo() async {
-    final result = await DeviceInfo().getBattery();
+    final result = await DeviceInfoX().getBattery();
     if (result != null) {
       map = result.toMap();
     }

@@ -14,7 +14,7 @@ class _CPUInfoTabState extends State<CPUInfoTab> {
   Map map = {};
 
   Future<void> getCPUInfo() async {
-    final result = await DeviceInfo().getCPUInfo();
+    final result = await DeviceInfoX().getCPUInfo();
     if (result != null) {
       map = result.toMap();
     }

@@ -16,7 +16,7 @@ class _SIMTabViewState extends State<SIMTabView> {
 
   Future<void> getSimInfo() async {
     try {
-      final result = await DeviceInfo().getSimInfo();
+      final result = await DeviceInfoX().getSimInfo();
       if (result != null) {
         map = result.toMap();
       }

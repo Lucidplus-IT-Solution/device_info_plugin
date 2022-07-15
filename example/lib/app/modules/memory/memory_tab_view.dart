@@ -14,7 +14,7 @@ class _MemoryTabViewState extends State<MemoryTabView> {
   Map map = {};
 
   Future<void> getMemoryInfo() async {
-    final result = await DeviceInfo().getMemoryInfo();
+    final result = await DeviceInfoX().getMemoryInfo();
     if (result != null) {
       map = result.toMap();
     }

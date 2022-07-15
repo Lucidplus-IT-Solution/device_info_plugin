@@ -129,31 +129,31 @@ void main() {
   });
 
   test('getAndroidDeviceInfo', () async {
-    DeviceInfo deviceInfoPlugin = DeviceInfo();
+    DeviceInfoX deviceInfoPlugin = DeviceInfoX();
     MockDeviceInfoPlatform fakePlatform = MockDeviceInfoPlatform();
     DeviceInfoPlatform.instance = fakePlatform;
     expect(await deviceInfoPlugin.getAndroidDeviceInfo(), AndroidDeviceInfo());
   });
   test('getAndroidInfo', () async {
-    DeviceInfo deviceInfoPlugin = DeviceInfo();
+    DeviceInfoX deviceInfoPlugin = DeviceInfoX();
     MockDeviceInfoPlatform fakePlatform = MockDeviceInfoPlatform();
     DeviceInfoPlatform.instance = fakePlatform;
     expect(await deviceInfoPlugin.getAndroid(), Android());
   });
   test('getBatteryInfo', () async {
-    DeviceInfo deviceInfoPlugin = DeviceInfo();
+    DeviceInfoX deviceInfoPlugin = DeviceInfoX();
     MockDeviceInfoPlatform fakePlatform = MockDeviceInfoPlatform();
     DeviceInfoPlatform.instance = fakePlatform;
     expect(await deviceInfoPlugin.getBattery(), Battery());
   });
   test('getCPUInfo', () async {
-    DeviceInfo deviceInfoPlugin = DeviceInfo();
+    DeviceInfoX deviceInfoPlugin = DeviceInfoX();
     MockDeviceInfoPlatform fakePlatform = MockDeviceInfoPlatform();
     DeviceInfoPlatform.instance = fakePlatform;
     expect(await deviceInfoPlugin.getCPUInfo(), CPUInfo());
   });
   test('getCameras', () async {
-    DeviceInfo deviceInfoPlugin = DeviceInfo();
+    DeviceInfoX deviceInfoPlugin = DeviceInfoX();
     MockDeviceInfoPlatform fakePlatform = MockDeviceInfoPlatform();
     DeviceInfoPlatform.instance = fakePlatform;
     expect(
@@ -176,7 +176,7 @@ void main() {
         ]));
   });
   test('getDRMInfo', () async {
-    DeviceInfo deviceInfoPlugin = DeviceInfo();
+    DeviceInfoX deviceInfoPlugin = DeviceInfoX();
     MockDeviceInfoPlatform fakePlatform = MockDeviceInfoPlatform();
     DeviceInfoPlatform.instance = fakePlatform;
     expect(
@@ -196,7 +196,7 @@ void main() {
         ));
   });
   test('getDisplayInfo', () async {
-    DeviceInfo deviceInfoPlugin = DeviceInfo();
+    DeviceInfoX deviceInfoPlugin = DeviceInfoX();
     MockDeviceInfoPlatform fakePlatform = MockDeviceInfoPlatform();
     DeviceInfoPlatform.instance = fakePlatform;
     expect(
@@ -213,7 +213,7 @@ void main() {
         ));
   });
   test('getMemoryInfo', () async {
-    DeviceInfo deviceInfoPlugin = DeviceInfo();
+    DeviceInfoX deviceInfoPlugin = DeviceInfoX();
     MockDeviceInfoPlatform fakePlatform = MockDeviceInfoPlatform();
     DeviceInfoPlatform.instance = fakePlatform;
     expect(
@@ -240,19 +240,19 @@ void main() {
         ));
   });
   test('getNetworkInfo', () async {
-    DeviceInfo deviceInfoPlugin = DeviceInfo();
+    DeviceInfoX deviceInfoPlugin = DeviceInfoX();
     MockDeviceInfoPlatform fakePlatform = MockDeviceInfoPlatform();
     DeviceInfoPlatform.instance = fakePlatform;
     expect(await deviceInfoPlugin.getNetworkInfo(), Network());
   });
   test('getSimInfo', () async {
-    DeviceInfo deviceInfoPlugin = DeviceInfo();
+    DeviceInfoX deviceInfoPlugin = DeviceInfoX();
     MockDeviceInfoPlatform fakePlatform = MockDeviceInfoPlatform();
     DeviceInfoPlatform.instance = fakePlatform;
     expect(await deviceInfoPlugin.getSimInfo(), SimInfo(sims: []));
   });
   test('getSystemFiles', () async {
-    DeviceInfo deviceInfoPlugin = DeviceInfo();
+    DeviceInfoX deviceInfoPlugin = DeviceInfoX();
     MockDeviceInfoPlatform fakePlatform = MockDeviceInfoPlatform();
     DeviceInfoPlatform.instance = fakePlatform;
     expect(
@@ -264,16 +264,15 @@ void main() {
         ));
   });
   test('getSystemInfo', () async {
-    DeviceInfo deviceInfoPlugin = DeviceInfo();
+    DeviceInfoX deviceInfoPlugin = DeviceInfoX();
     MockDeviceInfoPlatform fakePlatform = MockDeviceInfoPlatform();
     DeviceInfoPlatform.instance = fakePlatform;
     expect(await deviceInfoPlugin.getSystemInfo(), null);
   });
   test('getThermalInfo', () async {
-    DeviceInfo deviceInfoPlugin = DeviceInfo();
+    DeviceInfoX deviceInfoPlugin = DeviceInfoX();
     MockDeviceInfoPlatform fakePlatform = MockDeviceInfoPlatform();
     DeviceInfoPlatform.instance = fakePlatform;
     expect(await deviceInfoPlugin.getThermalInfo(), null);
   });
-  
 }

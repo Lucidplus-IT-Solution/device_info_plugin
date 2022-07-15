@@ -14,7 +14,7 @@ class _DisplayInfoTabViewState extends State<DisplayInfoTabView> {
   Map map = {};
 
   Future<void> getDisplayInfo() async {
-    final result = await DeviceInfo().getDisplayInfo();
+    final result = await DeviceInfoX().getDisplayInfo();
     if (result != null) {
       map = result.toMap();
     }

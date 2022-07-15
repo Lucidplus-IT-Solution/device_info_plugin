@@ -14,7 +14,7 @@ class _CameraInfoTabViewState extends State<CameraInfoTabView> {
   List<Cameras> cameras = [];
 
   Future<void> getCameraInfo() async {
-    final result = await DeviceInfo().getCameras();
+    final result = await DeviceInfoX().getCameras();
     if (result != null) {
       cameras = result.cameras;
     }

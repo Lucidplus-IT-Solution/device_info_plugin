@@ -16,7 +16,7 @@ class _SystemFilesTabViewState extends State<SystemFilesTabView> {
 
   Future<void> getSystemFilesInfo() async {
     try {
-      final result = await DeviceInfo().getSystemFiles();
+      final result = await DeviceInfoX().getSystemFiles();
       if (result != null) {
         map = result.toMap();
       }
@@ -29,7 +29,7 @@ class _SystemFilesTabViewState extends State<SystemFilesTabView> {
   }
 
   @override
-  void initState()  {
+  void initState() {
     super.initState();
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await getSystemFilesInfo();

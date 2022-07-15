@@ -14,7 +14,7 @@ class _NetworkTabViewState extends State<NetworkTabView> {
   Map map = {};
 
   Future<void> getNetworkInfo() async {
-    final result = await DeviceInfo().getNetworkInfo();
+    final result = await DeviceInfoX().getNetworkInfo();
     if (result != null) {
       map = result.toMap();
     }

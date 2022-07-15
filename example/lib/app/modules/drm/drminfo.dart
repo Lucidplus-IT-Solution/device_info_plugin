@@ -14,7 +14,7 @@ class _DRMInfoTabViewState extends State<DRMInfoTabView> {
   Map map = {};
 
   Future<void> getDRMInfo() async {
-    final result = await DeviceInfo().getDRMInfo();
+    final result = await DeviceInfoX().getDRMInfo();
     if (result != null) {
       map = result.toMap();
     }
