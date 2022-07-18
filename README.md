@@ -83,10 +83,10 @@ and the Flutter guide for
       <td>CPU</td>
   </tr>
   <tr>
-    <td><img src="screenshots/android.png" height="100%" width="100%"></td>
-     <td><img src="screenshots/battery.png" height="100%" width="100%"></td> 
-      <td><img src="screenshots/camera.png" height="100%" width="100%"></td>
-      <td><img src="screenshots/cpu.png" height="100%" width="100%"></td>
+    <td><img src="https://github.com/Lucidplus-IT-Solution/device_info_plugin/blob/main/screenshots/android.png?raw=true" height="100%" width="100%"></td>
+     <td><img src="https://github.com/Lucidplus-IT-Solution/device_info_plugin/blob/main/screenshots/battery.png?raw=true" height="100%" width="100%"></td> 
+      <td><img src="https://github.com/Lucidplus-IT-Solution/device_info_plugin/blob/main/screenshots/camera.png?raw=true" height="100%" width="100%"></td>
+      <td><img src="https://github.com/Lucidplus-IT-Solution/device_info_plugin/blob/main/screenshots/cpu.png?raw=true" height="100%" width="100%"></td>
   </tr>
  </table>
 
@@ -100,11 +100,11 @@ and the Flutter guide for
      
   </tr>
   <tr>
-   <td><img src="screenshots/display.png" height="100%" width="100%"></td> 
-      <td><img src="screenshots/drm.png" height="100%" width="100%"></td>
-      <td><img src="screenshots/memory.png" height="100%" width="100%"></td>
-     <td><img src="screenshots/network.png" height="100%" width="100%"></td> 
-      <td><img src="screenshots/system.png" height="100%" width="100%"></td>
+   <td><img src="https://github.com/Lucidplus-IT-Solution/device_info_plugin/blob/main/screenshots/display.png?raw=true" height="100%" width="100%"></td> 
+      <td><img src="https://github.com/Lucidplus-IT-Solution/device_info_plugin/blob/main/screenshots/drm.png?raw=true" height="100%" width="100%"></td>
+      <td><img src="https://github.com/Lucidplus-IT-Solution/device_info_plugin/blob/main/screenshots/memory.png?raw=true" height="100%" width="100%"></td>
+     <td><img src="https://github.com/Lucidplus-IT-Solution/device_info_plugin/blob/main/screenshots/network.png?raw=true" height="100%" width="100%"></td> 
+      <td><img src="https://github.com/Lucidplus-IT-Solution/device_info_plugin/blob/main/screenshots/system.png?raw=true" height="100%" width="100%"></td>
   </tr>
  </table>
  
@@ -218,6 +218,5 @@ getAndroidDeviceInfo() - Get all info
 ##  Features that will be added
 
 -  [x] Added basic device info only supports android for now
+- [ ] Will add support for iOS
 - [ ] Remove depreceated library
-
-- [ ] To publish on pub.dev

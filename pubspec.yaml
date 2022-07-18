@@ -1,6 +1,6 @@
 name: device_info_x
-description: A new Flutter project.
-version: 0.0.1
+description: A Device Info plugin with some extra functionality.
+version: 0.0.1+2
 homepage: https://github.com/Lucidplus-IT-Solution/device_info_plugin
 
 environment:
