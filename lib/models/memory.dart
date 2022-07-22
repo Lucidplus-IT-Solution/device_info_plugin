@@ -1,15 +1,23 @@
 import 'dart:convert';
 
 class Memory {
+  /// [ram] is the information about the ram.
   MemoryTypeInfo? ram;
+
+  /// [internal] is the information about the internal.
   MemoryTypeInfo? internal;
+
+  /// [external] is the information about the external.
   MemoryTypeInfo? external;
+
+  /// constructor for the memory class.
   Memory({
     this.ram,
     this.internal,
     this.external,
   });
 
+  /// [copyWith] is the method to copy the class.
   Memory copyWith({
     MemoryTypeInfo? ram,
     MemoryTypeInfo? internal,
@@ -22,6 +30,7 @@ class Memory {
     );
   }
 
+  /// [toMap] returns a map of the object.
   Map<String, dynamic> toMap() {
     return {
       'ram': ram?.toMap(),
@@ -30,6 +39,7 @@ class Memory {
     };
   }
 
+  /// [fromMap] returns instance of [Memory] from a map.
   factory Memory.fromMap(Map<String, dynamic> map) {
     return Memory(
       ram: map['ram'] != null ? MemoryTypeInfo.fromMap(map['ram']) : null,
@@ -42,13 +52,15 @@ class Memory {
     );
   }
 
+  /// [toJson] returns a json string of the object.
   String toJson() => json.encode(toMap());
 
+  /// [fromJson] returns a instance of [Memory] from a json string.
   factory Memory.fromJson(String source) => Memory.fromMap(json.decode(source));
 
   @override
   String toString() =>
-      'Memorya(ram: $ram, internal: $internal, external: $external)';
+      'Memory(ram: $ram, internal: $internal, external: $external)';
 
   @override
   bool operator ==(Object other) {
@@ -64,18 +76,28 @@ class Memory {
   int get hashCode => ram.hashCode ^ internal.hashCode ^ external.hashCode;
 }
 
+/// [MemoryTypeInfo] includes the memory type name and the size in MB.
 class MemoryTypeInfo {
+  /// [name] is the name of the memory type.
   String name;
+
+  /// [used] is the amount of memory used in MB.
   String used;
+
+  /// [free] is the amount of memory free in MB.
   String free;
+
+  /// [total] is the total amount of memory in MB.
   String total;
+
+  /// constructor for the memory type info class.
   MemoryTypeInfo({
     required this.name,
     required this.used,
     required this.free,
     required this.total,
   });
-
+ /// [copyWith] is the method to copy the class.
   MemoryTypeInfo copyWith({
     String? name,
     String? used,
@@ -90,6 +112,7 @@ class MemoryTypeInfo {
     );
   }
 
+  /// [toMap] returns the map of memory type info.
   Map<String, dynamic> toMap() {
     return {
       'name': name,
@@ -99,6 +122,7 @@ class MemoryTypeInfo {
     };
   }
 
+  /// [fromMap] returns [MemoryTypeInfo] from map.
   factory MemoryTypeInfo.fromMap(Map<String, dynamic> map) {
     return MemoryTypeInfo(
       name: map['name'] ?? '',
@@ -108,8 +132,10 @@ class MemoryTypeInfo {
     );
   }
 
+  /// [toJson] returns the json string of memory type info.
   String toJson() => json.encode(toMap());
 
+  /// [fromJson] returns [MemoryTypeInfo] from json string.
   factory MemoryTypeInfo.fromJson(String source) =>
       MemoryTypeInfo.fromMap(json.decode(source));
 

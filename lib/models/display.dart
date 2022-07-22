@@ -1,14 +1,31 @@
 import 'dart:convert';
 import 'dart:core';
 
+/// [Display] is information about the display.
 class Display {
+  /// [resolution] is the resolution of the display.
   String resolution;
+
+  /// [density] is the density of the display.
   String density;
+
+  /// [screenSize] is the screen size of the display.
   String screenSize;
+
+  /// [refreshRate] is the refresh rate of the display in Hz.
   String refreshRate;
+
+  /// [hdrCapabilities] is the hdr capability of the display.
   String hdrCapabilities;
+
+  /// [brightnessLevel] is the current brightness level of the display.
   String brightnessLevel;
+
+  /// [screenTimeout] is the screen timeout of the display in milliseconds.
   String screenTimeout;
+
+  /// [orientation] is the orientation of the display.
+
   String orientation;
 
   Display({
@@ -44,6 +61,7 @@ class Display {
     );
   }
 
+  /// [toMap] creates a map from the current [Display] object.
   Map<String, dynamic> toMap() {
     return {
       'resolution': resolution,
@@ -57,6 +75,7 @@ class Display {
     };
   }
 
+  /// [fromMap] creates a [Display] object from a map.
   factory Display.fromMap(Map<String, dynamic> map) {
     return Display(
       resolution: map['resolution'] ?? '',
@@ -70,8 +89,10 @@ class Display {
     );
   }
 
+  /// [toJson] creates a JSON object from the current [Display] object.
   String toJson() => json.encode(toMap());
 
+  /// [fromJson] creates a [Display] object from a JSON object.
   factory Display.fromJson(String source) =>
       Display.fromMap(json.decode(source));
 

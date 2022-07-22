@@ -3,76 +3,57 @@ import 'dart:core';
 
 import 'package:flutter/foundation.dart';
 
-class CPUCores {
-  String name;
-  double frequency;
-  CPUCores({
-    required this.name,
-    required this.frequency,
-  });
-
-  CPUCores copyWith({
-    String? name,
-    double? frequency,
-  }) {
-    return CPUCores(
-      name: name ?? this.name,
-      frequency: frequency ?? this.frequency,
-    );
-  }
-
-  Map<String, dynamic> toMap() {
-    return {
-      'name': name,
-      'frequency': frequency,
-    };
-  }
-
-  factory CPUCores.fromMap(Map<String, dynamic> map) {
-    return CPUCores(
-      name: map['name'] ?? '',
-      frequency: map['frequency']?.toDouble() ?? 0.0,
-    );
-  }
-
-  String toJson() => json.encode(toMap());
-
-  factory CPUCores.fromJson(String source) =>
-      CPUCores.fromMap(json.decode(source));
-
-  @override
-  String toString() => 'CPUCores(name: $name, frequency: $frequency)';
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-
-    return other is CPUCores &&
-        other.name == name &&
-        other.frequency == frequency;
-  }
-
-  @override
-  int get hashCode => name.hashCode ^ frequency.hashCode;
-}
-
+/// [CPUInfo] is the class for CPU information.
 class CPUInfo {
+  /// [soc] is the name of the SOC.
   String? soc;
+
+  /// [cpu] is the name of the CPU.
   String? cpu;
+
+  /// [vendor] is the name of the vendor.
   String? vendor;
+
+  /// [cores] is the number of CPU cores.
   String? cores;
+
+  /// [machines] is the architecture of the CPU.
   String? machines;
+
+  /// [cpuClockRange] is the CPU clock range in Mhz.
   String? cpuClockRange;
+
+  /// [CPUCores] is the list CPU clocks.
   List<CPUCores>? cpuClocks;
+
+  /// [supportedAbis] is the list of supported ABIs.
   List<String>? supportedAbis;
+
+  /// [supported32bitAbis] is the list of supported 32-bit ABIs.
   List<String>? supported32bitAbis;
+
+  /// [supported64bitAbis] is the list of supported 64-bit ABIs.
   List<String>? supported64bitAbis;
+
+  /// [instructions] is the list of instructions supported by the CPU.
   List<String>? instructions;
+
+  /// [revision] is the revision of the CPU.
   String? revision;
+
+  /// [governer] is the governor of the CPU.
   String? governer;
+
+  /// [gpu] is the name of the GPU.
   String? gpu;
+
+  /// [gpuVendor] is the name of the GPU vendor.
   String? gpuVendor;
+
+  /// [gpuVersion] is the version of the GPU.
   String? gpuVersion;
+
+  /// [openglExtensions] is the list of OpenGL extensions supported by the GPU.
   List<String>? openglExtensions;
   CPUInfo({
     this.soc,
@@ -134,6 +115,7 @@ class CPUInfo {
     );
   }
 
+  /// [toMap] is the method to convert the class to a map.
   Map<String, dynamic> toMap() {
     return {
       'soc': soc,
@@ -156,6 +138,7 @@ class CPUInfo {
     };
   }
 
+  /// [fromMap] is the method to convert the map to a class.
   factory CPUInfo.fromMap(Map<String, dynamic> map) {
     return CPUInfo(
       soc: map['soc'],
@@ -189,8 +172,10 @@ class CPUInfo {
     );
   }
 
+  /// [toJson] is the method to convert the class to a json.
   String toJson() => json.encode(toMap());
 
+  /// [fromJson] is the method to convert the json to a class.
   factory CPUInfo.fromJson(String source) =>
       CPUInfo.fromMap(json.decode(source));
 
@@ -243,4 +228,65 @@ class CPUInfo {
         gpuVersion.hashCode ^
         openglExtensions.hashCode;
   }
+}
+
+/// [CPUCores] is the class to represent the cpu cores.
+class CPUCores {
+  /// [name] is the name of the core.
+  String name;
+
+  /// [frequency] is the frequency of the core.
+  double frequency;
+  CPUCores({
+    required this.name,
+    required this.frequency,
+  });
+
+  CPUCores copyWith({
+    String? name,
+    double? frequency,
+  }) {
+    return CPUCores(
+      name: name ?? this.name,
+      frequency: frequency ?? this.frequency,
+    );
+  }
+
+  /// [toMap] is the method to convert the class to a map.
+  Map<String, dynamic> toMap() {
+    return {
+      'name': name,
+      'frequency': frequency,
+    };
+  }
+
+  /// [fromMap] is the method to convert the map to a class.
+  factory CPUCores.fromMap(Map<String, dynamic> map) {
+    return CPUCores(
+      name: map['name'] ?? '',
+      frequency: map['frequency']?.toDouble() ?? 0.0,
+    );
+  }
+
+  /// [toJson] is the method to convert the class to a json.
+  String toJson() => json.encode(toMap());
+
+  /// [fromJson] is the method to convert the json to a class.
+  factory CPUCores.fromJson(String source) =>
+      CPUCores.fromMap(json.decode(source));
+
+  @override
+  String toString() => 'CPUCores(name: $name, frequency: $frequency)';
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is CPUCores &&
+        other.name == name &&
+        other.frequency == frequency;
+  }
+
+  @override
+  int get hashCode => name.hashCode ^ frequency.hashCode;
 }

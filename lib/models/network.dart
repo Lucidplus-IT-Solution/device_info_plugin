@@ -1,13 +1,20 @@
 import 'dart:convert';
 
+/// [Network] is information about the network.
 class Network {
+  /// [Telephony] is information about the telephony.
   Telephony? telephony;
+
+  /// [Wifi] is information about the wifi.
   Wifi? wifi;
+
+  /// constructor for the network class.
   Network({
     this.telephony,
     this.wifi,
   });
 
+  /// [copyWith] is the method to copy the class.
   Network copyWith({
     Telephony? telephony,
     Wifi? wifi,
@@ -18,6 +25,7 @@ class Network {
     );
   }
 
+  /// [toMap] returns a map of the object.
   Map<String, dynamic> toMap() {
     return {
       'telephony': telephony?.toMap(),
@@ -25,6 +33,7 @@ class Network {
     };
   }
 
+  /// [fromMap] returns instance of [Network] from a map.
   factory Network.fromMap(Map<String, dynamic> map) {
     return Network(
       telephony:
@@ -33,8 +42,10 @@ class Network {
     );
   }
 
+  /// [toJson] returns a json string of the object.
   String toJson() => json.encode(toMap());
 
+  /// [fromJson] returns a instance of [Network] from a json string.
   factory Network.fromJson(String source) =>
       Network.fromMap(json.decode(source));
 
@@ -54,16 +65,36 @@ class Network {
   int get hashCode => telephony.hashCode ^ wifi.hashCode;
 }
 
+/// This includes the telephony information.
 class Telephony {
+  /// [phoneType] is the type of phone.i.e. gsm, cdma, etc.
   String? phoneType;
+
+  /// [networkOperatorName] is the name of the network operator.
   String? networkOperatorName;
+
+  /// [networkOperatorCode] is the code of the network operator.
   String? networkOperatorCode;
+
+  /// [networkOperatorCountry] is the code of the network country.
   String? networkOperatorCountry;
+
+  /// [simProviderName] is the name of the sim provider.
   String? simProviderName;
+
+  /// [simProviderCountry] is the country code of the sim provider.
   String? simProviderCountry;
+
+  /// [simState] is the state of the sim.
   String? simState;
+
+  /// [networkType] is the type of network.i.e. wifi, cellular, etc.
   String? networkType;
+
+  /// [isDeviceRoaming] is the state of the device roaming . i.e .
   bool? isDeviceRoaming;
+
+  /// constructor of [Telephony]
   Telephony({
     this.phoneType,
     this.networkOperatorName,
@@ -76,6 +107,7 @@ class Telephony {
     this.isDeviceRoaming,
   });
 
+  /// [copyWith] is the function to copy the class.
   Telephony copyWith({
     String? phoneType,
     String? networkOperatorName,
@@ -101,6 +133,7 @@ class Telephony {
     );
   }
 
+  /// [toMap] returns the map of telephony.
   Map<String, dynamic> toMap() {
     return {
       'phoneType': phoneType,
@@ -115,6 +148,7 @@ class Telephony {
     };
   }
 
+  /// [fromMap] returns the telephony from map.
   factory Telephony.fromMap(Map<String, dynamic> map) {
     return Telephony(
       phoneType: map['phoneType'],
@@ -129,8 +163,10 @@ class Telephony {
     );
   }
 
+  /// [toJson] returns the json of telephony.
   String toJson() => json.encode(toMap());
 
+  /// [fromJson] returns the telephony from json.
   factory Telephony.fromJson(String source) =>
       Telephony.fromMap(json.decode(source));
 
@@ -169,24 +205,67 @@ class Telephony {
   }
 }
 
+/// [Wifi] information about the device's wifi connection.
 class Wifi {
+  /// [state] The wifi state.
   String? state;
+
+  /// [ssid] The wifi SSID.
   String? ssid;
+
+  /// [bssid] The wifi BSSID.
   String? bssid;
+
+  /// [hiddenSsid] The wifi network ssid is hidden oe not.i.e - hidden-true,not hidden-false else null.
   bool? hiddenSsid;
+
+  /// [ipv4Address] The wifi network's ipv4 address.
   String? ipv4Address;
+
+  /// [ipv6Address] The wifi network's ipv6 address.
   String? ipv6Address;
+
+  /// [signalStrength] The wifi network's signal strength in dbM.
   String? signalStrength;
+
+  /// [linkSpeed] The wifi network's link speed in Mbps.
   String? linkSpeed;
+
+  /// [frequency] The wifi network's frequency in MHz.
   String? frequency;
+
+  /// [networkId] The wifi network's network id.
   String? networkId;
+
+  /// [gateway] The wifi network's gateway.
   String? gateway;
+
+  /// [netmask] The wifi network's netmask.
   String? netmask;
+
+  /// [dns1] The wifi network's dns1.
   String? dns1;
+
+  /// [dhcpLeaseDuration] The wifi network's DHCP lease duration in seconds.
   String? dhcpLeaseDuration;
+
+  /// [w5ghzBand] The wifi network is 5ghz or not. i.e - 5ghz-supported,not 5ghz-unsupported else null.
   String? w5ghzBand;
+
+  /// Wi-Fi Aware capabilities enable devices running Android 8.0 (API level 26) and higher to discover and connect directly to each other without
+  /// any other type of connectivity between them. Wi-Fi Aware is also known as Neighbor Awareness Networking (NAN).
+  ///
+  /// [isWifiAware] The wifi network is supported discover and connect directly to each other without any other type of connectivity between them.
+  /// return true if supported, else false and null in case of unknown.
   bool? isWifiAware;
+
+  /// Wi-Fi Direct (also known as peer-to-peer or P2P) allows your application to quickly
+  /// find and interact with nearby devices, at a range beyond the capabilities of Bluetooth.
+  ///
+  ///[isWifiDirectAvailable] return true if supported, else false and null in case of unknown.
   bool? isWifiDirectAvailable;
+
+  /// constructor of [Wifi] class.
   Wifi({
     this.state,
     this.ssid,
@@ -207,6 +286,7 @@ class Wifi {
     this.isWifiDirectAvailable,
   });
 
+  /// [copyWith] returns a new instance of [Wifi] class.
   Wifi copyWith({
     String? state,
     String? ssid,
@@ -248,6 +328,7 @@ class Wifi {
     );
   }
 
+  /// [toMap] Returns a map representation of the object.
   Map<String, dynamic> toMap() {
     return {
       'state': state,
@@ -270,6 +351,7 @@ class Wifi {
     };
   }
 
+  /// [fromMap] Returns a [Wifi] object from a map.
   factory Wifi.fromMap(Map<String, dynamic> map) {
     return Wifi(
       state: map['state'],
@@ -292,8 +374,10 @@ class Wifi {
     );
   }
 
+  /// [toJson] Returns a json representation of the object.
   String toJson() => json.encode(toMap());
 
+  /// [fromJson] Returns a [Wifi] object from a json representation.
   factory Wifi.fromJson(String source) => Wifi.fromMap(json.decode(source));
 
   @override

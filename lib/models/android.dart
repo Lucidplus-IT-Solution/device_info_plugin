@@ -1,33 +1,89 @@
 import 'dart:convert';
 
+/// [Android] is the class for android information.
 class Android {
+  /// [androidversion] is the version of the android i.e. 6.0.1.
   String? androidversion;
+
+  /// [apiLevel] is the api level of the android i.e. 23.
   int? apiLevel;
+
+  /// [androidSecurityPatchLevel] is the security patch level of the android.
   String? androidSecurityPatchLevel;
+
+  /// [isDeviceRooted] is the boolean value to check if the device is rooted or not.
   bool? isDeviceRooted;
+
+  /// [androidId] is the android id of the device.
   String? androidId;
+
+  /// [baseband] is the baseband of the android.
   String? baseband;
+
+  /// [bootloader] is the bootloader of the android.
   String? bootloader;
+
+  /// [buildId] is the build id of the android.
   String? buildId;
+
+  /// [codeName] is the code name of the android.
   String? codeName;
+
+  /// [fingerprint] is the fingerprint of the android.
   String? fingerprint;
+
+  /// [id] is the id of the android.
   String? id;
+
+  /// [incremental] is the incremental of the android.
   String? incremental;
+
+  /// [javaRuntimeVersion] is the java runtime version of the android.
   String? javaRuntimeVersion;
+
+  /// [javaVmVersion] is the java vm version of the android.
   String? javaVmVersion;
+
+  /// [javaHeapSize] is the java heap size of the android.
   String? javaHeapSize;
+
+  /// [kernelArchitecture] is the kernel architecture of the android.
   String? kernelArchitecture;
+
+  /// [kernelVersion] is the kernel version of the android.
   String? kernelVersion;
+
+  /// [tags] is the tags of the android.
   String? tags;
+
+  /// [buildType] is the build type of the android.
   String? buildType;
+
+  /// [googlePlayServiceVersion] is the google play service version of the android.
   String? googlePlayServiceVersion;
+
+  /// [opensslVersion] is the openssl version of the android.
   String? opensslVersion = "";
+
+  /// [zlibVersion] is the zlib version of the android.
   String? zlibVersion = "";
+
+  /// [icuCldrVersion] is the icu cldr version of the android.
   String? icuCldrVersion = "";
+
+  /// [icuLibraryVersion] is the icu library version of the android.
   String? icuLibraryVersion = "";
+
+  /// [icuUnicodeVersion] is the icu unicode version of the android.
   String? icuUnicodeVersion = "";
+
+  /// [androidLanguage] is the language of the android.
   String? androidLanguage = "";
+
+  /// [configuredTimeZone] is the configured time zone of the android.
   String? configuredTimeZone = "";
+
+  /// constructor to initialize the android information.
   Android({
     this.androidversion,
     this.apiLevel,
@@ -58,6 +114,7 @@ class Android {
     this.configuredTimeZone,
   });
 
+  /// [copyWith] is the function to copy the android information.
   Android copyWith({
     String? androidversion,
     int? apiLevel,
@@ -120,6 +177,7 @@ class Android {
     );
   }
 
+  /// [toMap] is the map representation of the android.
   Map<String, dynamic> toMap() {
     return {
       'androidversion': androidversion,
@@ -152,6 +210,7 @@ class Android {
     };
   }
 
+  /// [fromMap] is the map representation of the android.
   factory Android.fromMap(Map<String, dynamic> map) {
     return Android(
       androidversion: map['androidversion'],
@@ -184,8 +243,10 @@ class Android {
     );
   }
 
+  /// [toJson] is the json representation of the android.
   String toJson() => json.encode(toMap());
 
+  /// [fromJson] is the json representation of the android.
   factory Android.fromJson(String source) =>
       Android.fromMap(json.decode(source));
 

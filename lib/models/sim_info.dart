@@ -2,12 +2,17 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 
+/// [SimInfo] is information about the sims.
 class SimInfo {
+  /// [sims] is list of [SIMType].
   List<SIMType> sims;
+
+  /// constructor for the class.
   SimInfo({
     required this.sims,
   });
 
+  /// [copyWith] is the function to copy the class.
   SimInfo copyWith({
     List<SIMType>? sims,
   }) {
@@ -16,20 +21,24 @@ class SimInfo {
     );
   }
 
+  /// [toMap] returns a map of the object.
   Map<String, dynamic> toMap() {
     return {
       'sims': sims.map((x) => x.toMap()).toList(),
     };
   }
 
+  /// [fromMap] returns instance of [SimInfo] from a map.
   factory SimInfo.fromMap(Map<String, dynamic> map) {
     return SimInfo(
       sims: List<SIMType>.from(map['sims']?.map((x) => SIMType.fromMap(x))),
     );
   }
 
+  /// [toJson] returns a json string of the object.
   String toJson() => json.encode(toMap());
 
+  /// [fromJson] returns a instance of [SimInfo] from a json string.
   factory SimInfo.fromJson(String source) =>
       SimInfo.fromMap(json.decode(source));
 
@@ -47,16 +56,37 @@ class SimInfo {
   int get hashCode => sims.hashCode;
 }
 
+/// [SIMType] includes the sim slot name,sim state (active/inactive) ,line number,voice mail number,serial number iccc id,sim operator name,
+/// operator mcc,operator mnc,sim country code & software version.
 class SIMType {
+  /// The name of sim slot.
   String slotName;
+
+  /// The state of sim slot.
   String simState;
+
+  /// The line number of sim slot.
   String lineNumber;
+
+  /// The voice mail number of sim slot.
   String voicemailNumber;
+
+  /// The serial number of sim slot.
   String serialNumberIccid;
+
+  /// The sim operator name of sim slot.
   String operatorName;
+
+  /// The operator mcc of sim slot.
   String operatorCodeMccMnc;
+
+  /// The sim country code of sim slot.
   String country;
+
+  /// The software version of sim slot.
   int softwareVersion;
+
+  /// constructor of [SIMType]
   SIMType({
     required this.slotName,
     required this.simState,
@@ -69,6 +99,7 @@ class SIMType {
     required this.softwareVersion,
   });
 
+  /// [copyWith] is the method to copy the class.
   SIMType copyWith({
     String? slotName,
     String? simState,
@@ -93,6 +124,7 @@ class SIMType {
     );
   }
 
+  /// returns the map of sim type.
   Map<String, dynamic> toMap() {
     return {
       'slotName': slotName,
@@ -107,6 +139,7 @@ class SIMType {
     };
   }
 
+  /// returns [SIMType] from map.
   factory SIMType.fromMap(Map<String, dynamic> map) {
     return SIMType(
       slotName: map['slotName'] ?? '',
@@ -121,8 +154,10 @@ class SIMType {
     );
   }
 
+  /// returns the json string of sim type.
   String toJson() => json.encode(toMap());
 
+  /// returns [SIMType] from json string.
   factory SIMType.fromJson(String source) =>
       SIMType.fromMap(json.decode(source));
 

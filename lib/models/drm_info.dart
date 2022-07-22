@@ -1,17 +1,45 @@
 import 'dart:convert';
 
+///This document provides an overview of the Android digital rights management (DRM) framework and
+///introduces the interfaces that a DRM plugin must implement.
+///This document doesn't describe robustness rules or compliance rules that may be defined by a DRM scheme.
+///
+/// [DRMINFO] is information about the DRM.
 class DRMINFO {
+  /// [vendor] is the vendor of the DRM.
   String vendor = "UNKNOWN";
+
+  /// [version] is the version of the DRM.
   String version = "UNKNOWN";
+
+  /// [description] is the description of the DRM.
   String description = "UNKNOWN";
+
+  /// [algorithms] is the algorithms of the DRM.
   String algorithms = "UNKNOWN";
+
+  /// [systemId] is the system id of the DRM.
   String systemId = "UNKNOWN";
+
+  /// [securityLevel] is the security level of the DRM.
   String securityLevel = "UNKNOWN";
+
+  /// [hdcpLevel] is the hdcp level of the DRM.
   String hdcpLevel = "UNKNOWN";
+
+  /// [maxHdcpLevel] is the max hdcp level of the DRM.
   String maxHdcpLevel = "UNKNOWN";
+
+  /// [usageRepostingSupport] is the usage reposting support of the DRM.
   String usageRepostingSupport = "UNKNOWN";
+
+  /// [maxNoOfSessions] is the max no of sessions of the DRM.
   String maxNoOfSessions = "UNKNOWN";
+
+  /// [noOfOpenSessions] is the no of open sessions of the DRM.
   String noOfOpenSessions = "UNKNOWN";
+
+  /// constructor for the DRMINFO class.
   DRMINFO({
     required this.vendor,
     required this.version,
@@ -26,6 +54,7 @@ class DRMINFO {
     required this.noOfOpenSessions,
   });
 
+  /// [copyWith] is the function to copy the class.
   DRMINFO copyWith({
     String? vendor,
     String? version,
@@ -55,6 +84,7 @@ class DRMINFO {
     );
   }
 
+  /// [toMap] returns the map of DRMINFO.
   Map<String, dynamic> toMap() {
     return {
       'vendor': vendor,
@@ -71,6 +101,7 @@ class DRMINFO {
     };
   }
 
+  /// [fromMap] returns the DRMINFO from map.
   factory DRMINFO.fromMap(Map<String, dynamic> map) {
     return DRMINFO(
       vendor: map['vendor'] ?? '',
@@ -87,8 +118,10 @@ class DRMINFO {
     );
   }
 
+  /// [toJson] returns the DRMINFO from JSON.
   String toJson() => json.encode(toMap());
 
+  /// [fromJson] returns the DRMINFO from JSON.
   factory DRMINFO.fromJson(String source) =>
       DRMINFO.fromMap(json.decode(source));
 

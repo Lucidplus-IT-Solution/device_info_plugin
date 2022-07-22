@@ -2,12 +2,17 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 
+/// [CameraInfos] is the class for camera information.
 class CameraInfos {
+  /// [cameras] is the name of the camera.
   List<Cameras> cameras;
+
+  /// constructor for the class.
   CameraInfos({
     required this.cameras,
   });
 
+  /// [copyWith] is the function to copy the class.
   CameraInfos copyWith({
     List<Cameras>? cameras,
   }) {
@@ -16,12 +21,14 @@ class CameraInfos {
     );
   }
 
+  ///[toMap] is the method to convert the class to a map.
   Map<String, dynamic> toMap() {
     return {
       'cameras': cameras.map((x) => x.toMap()).toList(),
     };
   }
 
+  /// [fromMap] is the method to convert a map to the class.
   factory CameraInfos.fromMap(Map<String, dynamic> map) {
     return CameraInfos(
       cameras:
@@ -29,8 +36,10 @@ class CameraInfos {
     );
   }
 
+  /// [toJson] is the method to convert the class to a json.
   String toJson() => json.encode(toMap());
 
+  /// [fromJson] is the method to convert the json to a class.
   factory CameraInfos.fromJson(String source) =>
       CameraInfos.fromMap(json.decode(source));
 
@@ -48,20 +57,48 @@ class CameraInfos {
   int get hashCode => cameras.hashCode;
 }
 
+/// [Cameras] is the class to represent the camera.
 class Cameras {
+  /// [name] is the name of the camera i.e 0 for front and 1 for back.
   String name;
+
+  /// [resolution] is the resolution of the camera in MP.
   String resolution;
+
+  /// [videoResolution] is the video resolution of the camera in MP.
   String videoResolution;
+
+  /// [orientation] is the orientation of the camera.
   String orientation;
+
+  /// [focalLength] is the focal length of the camera.
   String focalLength;
+
+  /// [focusModes] is the supported list of focus modes of the camera.
   List<String> focusModes;
+
+  /// [videoSnapshotSupported] is the flag to check if video snapshot is supported or not.
   bool videoSnapshotSupported;
+
+  /// [videoStabilizationSupported] is the flag to check if video stabilization is supported or not.
   bool videoStabilizationSupported;
+
+  /// [zoomSupported] is the flag to check if zoom is supported or not.
   bool zoomSupported;
+
+  /// [smoothZoomSupported] is the flag to check if smooth zoom is supported or not.
   bool smoothZoomSupported;
+
+  /// [autoExposureLockingSupported] is the flag to check if auto exposure locking is supported or not.
   bool autoExposureLockingSupported;
+
+  /// [autoWhiteBalanceLockingSupported] is the flag to check if auto white balance locking is supported or not.
   bool autoWhiteBalanceLockingSupported;
+
+  ///[flashSupported] is the flag to check if flash is supported or not.
   bool flashSupported;
+
+  /// constructor for the class.
   Cameras({
     required this.name,
     required this.resolution,
@@ -78,6 +115,7 @@ class Cameras {
     required this.flashSupported,
   });
 
+  /// [copyWith] is the method to copy the class.
   Cameras copyWith({
     String? name,
     String? resolution,
@@ -114,6 +152,7 @@ class Cameras {
     );
   }
 
+  /// [toMap] is the method to convert the class to map.
   Map<String, dynamic> toMap() {
     return {
       'name': name,
@@ -132,6 +171,7 @@ class Cameras {
     };
   }
 
+  /// [fromMap] is the method to convert the map to class.
   factory Cameras.fromMap(Map<String, dynamic> map) {
     return Cameras(
       name: map['name'] ?? '',
@@ -152,8 +192,10 @@ class Cameras {
     );
   }
 
+  /// [toJson] is the method to convert the class to json.
   String toJson() => json.encode(toMap());
 
+  /// [fromJson] is the method to convert the json to class.
   factory Cameras.fromJson(String source) =>
       Cameras.fromMap(json.decode(source));
 

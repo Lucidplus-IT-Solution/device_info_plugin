@@ -2,12 +2,17 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 
+/// [Thermal] is information about the thermal.
 class Thermal {
+  /// list of cpu thermals [ThermalType] i.e cpu0, cpu1, cpu2, cpu3, cpu4, cpu5, cpu6, cpu7.
   List<ThermalType> cpuThermals;
+
+  /// constructor for the class.
   Thermal({
     required this.cpuThermals,
   });
 
+  /// [copyWith] is the function to copy the class.
   Thermal copyWith({
     List<ThermalType>? cpuThermals,
   }) {
@@ -16,12 +21,14 @@ class Thermal {
     );
   }
 
+  /// returns map representation of [Thermal] object.
   Map<String, dynamic> toMap() {
     return {
       'cpuThermals': cpuThermals.map((x) => x.toMap()).toList(),
     };
   }
 
+  /// returns [Thermal] object from map.
   factory Thermal.fromMap(Map<String, dynamic> map) {
     return Thermal(
       cpuThermals: List<ThermalType>.from(
@@ -29,8 +36,10 @@ class Thermal {
     );
   }
 
+  /// returns json representation of [Thermal] object.
   String toJson() => json.encode(toMap());
 
+  /// returns [Thermal] object from json.
   factory Thermal.fromJson(String source) =>
       Thermal.fromMap(json.decode(source));
 
@@ -48,14 +57,21 @@ class Thermal {
   int get hashCode => cpuThermals.hashCode;
 }
 
+/// This includes the thermal type name cpu name and the temperature in celcius.
 class ThermalType {
+  /// The name of cpu core.
   String name;
+
+  /// The temperature of cpu core in celcius.
   String temperature;
+
+  /// constructor for the class.
   ThermalType({
     required this.name,
     required this.temperature,
   });
 
+  /// [copyWith] is the function to copy the class.
   ThermalType copyWith({
     String? name,
     String? temperature,
@@ -66,6 +82,7 @@ class ThermalType {
     );
   }
 
+  /// returns the map of thermal type.
   Map<String, dynamic> toMap() {
     return {
       'name': name,
@@ -73,6 +90,7 @@ class ThermalType {
     };
   }
 
+  /// returns [ThermalType] from map.
   factory ThermalType.fromMap(Map<String, dynamic> map) {
     return ThermalType(
       name: map['name'] ?? '',
@@ -80,8 +98,10 @@ class ThermalType {
     );
   }
 
+  /// returns the json string of thermal type.
   String toJson() => json.encode(toMap());
 
+  /// returns [ThermalType] from json string.
   factory ThermalType.fromJson(String source) =>
       ThermalType.fromMap(json.decode(source));
 

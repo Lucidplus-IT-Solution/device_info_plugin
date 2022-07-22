@@ -1,3 +1,4 @@
+/// [device_info_x] is the library for getting device information.
 library device_info_x;
 
 export 'package:device_info_x/models/android_device_info.dart';

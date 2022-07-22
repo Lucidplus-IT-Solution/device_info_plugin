@@ -14,19 +14,45 @@ import 'thermal.dart';
 import 'network.dart';
 import 'system_files.dart';
 
+/// [AndroidDeviceInfo] is the class for android device information.
 class AndroidDeviceInfo {
+  /// [system] is the system information of the android device.
   SystemInfo? system;
+
+  /// [cpu] is the cpu information of the android device.
   CPUInfo? cpu;
+
+  /// [android] is the android information of the android device.
   Android? android;
+
+  /// [drmInfo] is the drm information of the android device.
   DRMINFO? drmInfo;
+
+  /// [memory] is the memory information of the android device.
   Memory? memory;
+
+  /// [camera] is the camera information of the android device.
   CameraInfos? camera;
+
+  /// [battery] is the battery information of the android device.
   Battery? battery;
+
+  /// [display] is the display information of the android device.
   Display? display;
+
+  /// [thermal] is the thermal information of the android device.
   Thermal? thermal;
+
+  /// [network] is the network information of the android device.
   Network? network;
+
+  /// [simInfo] is the sim information of the android device.
   SimInfo? simInfo;
+
+  /// [systemFile] is the system files information of the android device.
   SystemFiles? systemFile;
+
+  /// This is the constructor for the class.
   AndroidDeviceInfo({
     this.system,
     this.cpu,
@@ -42,6 +68,7 @@ class AndroidDeviceInfo {
     this.systemFile,
   });
 
+  /// [copyWith] is the function to copy the class.
   AndroidDeviceInfo copyWith({
     SystemInfo? system,
     CPUInfo? cpu,
@@ -72,6 +99,7 @@ class AndroidDeviceInfo {
     );
   }
 
+  /// [toMap] is the method to convert the android device information to map.
   Map<String, dynamic> toMap() {
     return {
       'system': system?.toMap(),
@@ -89,6 +117,7 @@ class AndroidDeviceInfo {
     };
   }
 
+  /// [fromMap] is the method to convert the map to the android device information.
   factory AndroidDeviceInfo.fromMap(Map<String, dynamic> map) {
     return AndroidDeviceInfo(
       system: map['system'] != null ? SystemInfo.fromMap(map['system']) : null,
@@ -108,8 +137,10 @@ class AndroidDeviceInfo {
     );
   }
 
+  /// [toJson] is the method to convert the android device information to json.
   String toJson() => json.encode(toMap());
 
+  /// [fromJson] is the method to convert the json to the android device information.
   factory AndroidDeviceInfo.fromJson(String source) =>
       AndroidDeviceInfo.fromMap(json.decode(source));
 

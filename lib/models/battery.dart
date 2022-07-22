@@ -1,14 +1,32 @@
 import 'dart:convert';
 
+/// [Battery] is the class for battery information.
 class Battery {
+  /// [level] is the level of the battery.
   int? level;
+
+  /// [health] is the health of the battery.
   String? health;
+
+  /// [status] is the status of the battery i.e charging or discharging.
   String? status;
+
+  /// [powerSource] is the power source of the battery.
   String? powerSource;
+
+  /// [technology] is the technology of the battery i.e Li-ion.
   String? technology;
+
+  /// [temperature] is the temperature of the battery in celcius.
   String? temperature;
+
+  /// [voltage] is the voltage of the battery.
   String? voltage;
+
+  /// [powerProfile] is the power profile of the battery.
   String? powerProfile;
+
+  /// constructor for the battery class.
   Battery({
     this.level,
     this.health,
@@ -20,6 +38,7 @@ class Battery {
     this.powerProfile,
   });
 
+  /// [copyWith] is the method to copy the class.
   Battery copyWith({
     int? level,
     String? health,
@@ -42,6 +61,7 @@ class Battery {
     );
   }
 
+  /// [toMap] is the method to convert the class to a map.
   Map<String, dynamic> toMap() {
     return {
       'level': level,
@@ -55,6 +75,7 @@ class Battery {
     };
   }
 
+  /// [fromMap] is the method to convert the map to the class.
   factory Battery.fromMap(Map<String, dynamic> map) {
     return Battery(
       level: map['level']?.toInt(),
@@ -68,8 +89,10 @@ class Battery {
     );
   }
 
+  /// [toJson] is the method to convert the class to a json.
   String toJson() => json.encode(toMap());
 
+  /// [fromJson] is the method to convert the json to the class.
   factory Battery.fromJson(String source) =>
       Battery.fromMap(json.decode(source));
 

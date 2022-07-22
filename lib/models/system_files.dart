@@ -1,15 +1,24 @@
 import 'dart:convert';
 
+/// [SystemFiles] is information about the system files.
 class SystemFiles {
+  /// [cpuInfo] is information about the CPU.
   SystemType cpuInfo;
+
+  /// [hosts] is information about the hosts.
   SystemType hosts;
+
+  /// [memoryInfo] is information about the memory.
   SystemType memoryInfo;
+
+  /// constructor for the class.
   SystemFiles({
     required this.cpuInfo,
     required this.hosts,
     required this.memoryInfo,
   });
 
+  /// [copyWith] is the method to copy the class.
   SystemFiles copyWith({
     SystemType? cpuInfo,
     SystemType? hosts,
@@ -22,6 +31,7 @@ class SystemFiles {
     );
   }
 
+  /// [toMap] returns a map of the object.
   Map<String, dynamic> toMap() {
     return {
       'cpuInfo': cpuInfo.toMap(),
@@ -30,6 +40,7 @@ class SystemFiles {
     };
   }
 
+  /// [fromMap] returns instance of [SystemFiles] from a map.
   factory SystemFiles.fromMap(Map<String, dynamic> map) {
     return SystemFiles(
       cpuInfo: SystemType.fromMap(map['cpuInfo']),
@@ -38,8 +49,10 @@ class SystemFiles {
     );
   }
 
+  ///[toJson] returns a json string of the object.
   String toJson() => json.encode(toMap());
 
+  ///[fromJson] returns a instance of [SystemFiles] from a json string.
   factory SystemFiles.fromJson(String source) =>
       SystemFiles.fromMap(json.decode(source));
 
@@ -62,15 +75,23 @@ class SystemFiles {
 }
 
 class SystemType {
+  /// [name] The name of the system file.
   String name;
+
+  /// [path] The path of the system file.
   String path;
+
+  /// [content] The resultant info of the system file.
   String? content;
+
+  /// constructor for the class.
   SystemType({
     required this.name,
     required this.path,
     this.content,
   });
 
+  /// [copyWith] is the method to copy the class.
   SystemType copyWith({
     String? name,
     String? path,
@@ -83,6 +104,7 @@ class SystemType {
     );
   }
 
+  /// [toMap] converts this object to a map.
   Map<String, dynamic> toMap() {
     return {
       'name': name,
@@ -91,6 +113,7 @@ class SystemType {
     };
   }
 
+  /// [fromMap] converts a map to a [SystemType] object.
   factory SystemType.fromMap(Map<String, dynamic> map) {
     return SystemType(
       name: map['name'] ?? '',
@@ -99,8 +122,10 @@ class SystemType {
     );
   }
 
+  /// [toJson] converts this object to a json string.
   String toJson() => json.encode(toMap());
 
+  /// [fromJson] converts a json string to a [SystemType] object.
   factory SystemType.fromJson(String source) =>
       SystemType.fromMap(json.decode(source));
 

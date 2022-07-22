@@ -1,30 +1,82 @@
 import 'dart:convert';
 
+/// [SystemInfo] is information about the system.
 class SystemInfo {
+  /// [manufacture] is the name of manufacturer of the device.
   String manufacture;
+
+  /// [model] is the name of model of the device.
   String model;
+
+  /// [brand] is the name of brand of the device.
   String brand;
+
+  /// [android] is the version of android of the device. i.e. android 8.1.0.
   String android;
+
+  /// [apiLevel] is the api level of android of the device. i.e. api level 28.
   String apiLevel;
+
+  /// [codeName] is the code name of android of the device. i.e. lollipop, marshmallow, etc.
   String codeName;
+
+  /// [density] is the density of the device. i.e. 330.
   String density;
+
+  /// [refreshRate] is the refresh rate of the device. i.e. 60,90,120.
   String refreshRate;
+
+  /// [product] is the product name of the device. i.e. Google Pixel 3.
   String product;
+
+  /// [board] is the board name of the device. i.e. samsung_msm8996.
   String board;
+
+  /// [build] is the build number of the device.  refers to `android.os.Build.ID` e.g. LMY48G.
   String build;
+
+  /// [javaVmVersion] is the java version of the device.Refers to `System.getProperty("java.vm.version")` e.g.2.1.0
   String javaVmVersion;
+
+  /// [security] is the security patch level of the device. i.e. 2018-05-01.
   String security;
+
+  /// [baseband] is the baseband version of the device. `Build.getRadioVersion()` e.g. Q_G964_V10.0.0.0.
   String baseband;
+
+  /// [serial] is the serial number of the device. `Build.getSerial()`.e.g. A0YKZBJYXK.
+  ///
+  /// return security exceeption on error
   String serial;
+
+  /// [buildType] is the build type of the device. i.e. release, debug,user etc.
   String buildType;
+
+  /// [tags]  describing the build, like "unsigned,debug".
   String tags;
+
+  /// [incremental] is the incremental build number of the device. i.e. 12345.
   String incremental;
+
+  /// [fingerprint] is the fingerprint of the device. i.e. google/pixel3/google:6.0.1/NRD90M/4.4.2:user/release-keys.
   String fingerprint;
+
+  /// [fingerprintManufacture] is the name of finger print manufacturer of the device. i.e. Goodix.
   String fingerprintManufacture;
+
+  /// [fingerprintModel] is the name of finger print model of the device. i.e. FP.
   String fingerprintModel;
+
+  ///[defaultOrientation] is the default Orientation of the device. i.e. portrait.
   String defaultOrientation;
+
+  /// [bootloader] is the bootloader version of the device. i.e. G964V10.0.0.0.
   String bootloader;
+
+  /// [selinux] is the selinux status of the device. i.e. enforcing.
   String selinux;
+
+  /// constructor of [SystemInfo]
   SystemInfo({
     required this.manufacture,
     required this.model,
@@ -52,6 +104,7 @@ class SystemInfo {
     required this.selinux,
   });
 
+  /// [copyWith] is used to copy the [SystemInfo] object.
   SystemInfo copyWith({
     String? manufacture,
     String? model,
@@ -107,6 +160,7 @@ class SystemInfo {
     );
   }
 
+  /// [toMap] returns a map of the object.
   Map<String, dynamic> toMap() {
     return {
       'manufacture': manufacture,
@@ -136,6 +190,7 @@ class SystemInfo {
     };
   }
 
+  /// [fromMap] returns a SystemInfo object from a map.
   factory SystemInfo.fromMap(Map<String, dynamic> map) {
     return SystemInfo(
       manufacture: map['manufacture'] ?? '',
@@ -165,8 +220,10 @@ class SystemInfo {
     );
   }
 
+  /// [toJson] returns a json object of the object.
   String toJson() => json.encode(toMap());
 
+  /// [fromJson] returns a SystemInfo object from a json object.
   factory SystemInfo.fromJson(String source) =>
       SystemInfo.fromMap(json.decode(source));
 
