@@ -1,6 +1,6 @@
 name: device_info_x
 description: A Device Info plugin with some extra functionality.With this plugin you can get android info,battery,camera,CPU,Display,DRM,Memory,Network,System.
-version: 0.0.1+3
+version: 0.0.1+4
 homepage: https://github.com/Lucidplus-IT-Solution/device_info_plugin
 
 environment:

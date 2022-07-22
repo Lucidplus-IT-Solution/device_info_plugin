@@ -19,8 +19,8 @@ void main() {
     // Verify that platform version is retrieved.
     expect(
       find.byWidgetPredicate(
-        (Widget widget) => widget is Text &&
-                           widget.data!.startsWith('Welcome to Flutter!'),
+        (Widget widget) =>
+            widget is Text && widget.data!.startsWith('Welcome to Flutter!'),
       ),
       findsOneWidget,
     );

@@ -1,3 +1,5 @@
+## 0.0.1+4
+- Added Format Fix
 ## 0.0.1+3
 - Added API Documentations
 ## 0.0.1+2

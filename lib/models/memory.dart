@@ -97,7 +97,8 @@ class MemoryTypeInfo {
     required this.free,
     required this.total,
   });
- /// [copyWith] is the method to copy the class.
+
+  /// [copyWith] is the method to copy the class.
   MemoryTypeInfo copyWith({
     String? name,
     String? used,
