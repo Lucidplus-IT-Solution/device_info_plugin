@@ -40,7 +40,7 @@ and the Flutter guide for
 
 - [:white_check_mark:] -  Stable  
 &nbsp;
-- [:heavy_exclamation_mark:] - Not fully Stable(Some information cannot be retrived. Use with caution)
+- [:exclamation:] - Not fully Stable(Some information cannot be retrived. Use with caution)
 &nbsp;
 - [:x:] - Experimental ( Cannot guarantee,still not added to plugin yet)
 &nbsp;&nbsp;&nbsp;
@@ -49,25 +49,25 @@ and the Flutter guide for
 
 #### Supported Retriving Information about
 
-- [:heavy_exclamation_mark:] Android
+- [:exclamation:] Android
 
 - [:white_check_mark:] System
 
-- [:heavy_exclamation_mark:] Battery
+- [:exclamation:] Battery
 
-- [:white_check_mark: ] Camera
+- [:white_check_mark:] Camera
 
-- [:heavy_exclamation_mark: ] CPU
+- [:exclamation:] CPU
 
-- [:white_check_mark: ] Display
+- [:white_check_mark:] Display
 
-- [ :white_check_mark:] DRM
+- [:white_check_mark:] DRM
 
-- [:white_check_mark: ] Memory
+- [:white_check_mark:] Memory
 
-- [:heavy_exclamation_mark:] Network
+- [:exclamation:] Network
 
-- [:x: ] SIM
+- [:x:] SIM
 
 - [:x:] System Files
 

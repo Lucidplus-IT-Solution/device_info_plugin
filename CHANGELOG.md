@@ -1,3 +1,6 @@
+## 0.0.1+5
+- Upgraded dependencies
+- Updated Readme
 ## 0.0.1+4
 - Added Format Fix
 ## 0.0.1+3
